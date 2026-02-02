@@ -20,11 +20,16 @@ public class SpriteMultiLineTimer : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioSource limitedAudioSource;
 
+    [Header("Fade Control")]
+    [SerializeField] private CanvasGroup timerCanvasGroup;
+
     // 現在表示しているスプライトのインデックスをキャッシュ（負荷軽減用）
     private int[] currentIndices = new int[6] { -1, -1, -1, -1, -1, -1 };
     private Image[] targetImages;
     private Tween timerTween;
     private int previousSecond = -1;
+
+    private Tween fadeTween; // 生成したTweenを保持する変数
 
     void Awake()
     {
@@ -56,6 +61,16 @@ public class SpriteMultiLineTimer : MonoBehaviour
 
     public void RestartTimer(float time)
     {
+        // リスタート時にフェードをリセットする処理を追加
+        if (fadeTween != null)
+        {
+            fadeTween.Kill(); // アニメーション停止
+        }
+        if (timerCanvasGroup != null)
+        {
+            timerCanvasGroup.alpha = 1.0f; // 透明度を元に戻す
+        }
+
         StartTimer(time);
         limitedAudioSource.Stop();
     }
@@ -70,6 +85,15 @@ public class SpriteMultiLineTimer : MonoBehaviour
         if (time == 30)
         {
             limitedAudioSource.Play();
+
+            if(timerCanvasGroup != null)
+            {
+                Debug.Log("Start Fade Animation");
+                fadeTween = timerCanvasGroup.DOFade(0.165f, 0.5f)
+                    .SetLoops(-1, LoopType.Yoyo)
+                    .SetEase(Ease.InOutSine)
+                    .SetLink(gameObject); // オブジェクト破棄対策
+            }
         }
 
     }

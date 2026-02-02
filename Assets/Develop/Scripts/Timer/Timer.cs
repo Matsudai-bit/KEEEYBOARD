@@ -7,7 +7,7 @@ public class SpriteMultiLineTimer : MonoBehaviour
     [Header("Assets")]
     [SerializeField] private Sprite[] numberSprites; // 0〜9の画像を登録
 
-    [Header("UI References (Upper Row)")]
+    [Header("UI References")]
     [SerializeField] private Image min10;
     [SerializeField] private Image min01;
     [SerializeField] private Image sec10;
@@ -16,10 +16,15 @@ public class SpriteMultiLineTimer : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private float duration = 65.0f; // タイマー時間
 
+    [Header("Sound Clip")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource limitedAudioSource;
+
     // 現在表示しているスプライトのインデックスをキャッシュ（負荷軽減用）
     private int[] currentIndices = new int[6] { -1, -1, -1, -1, -1, -1 };
     private Image[] targetImages;
     private Tween timerTween;
+    private int previousSecond = -1;
 
     void Awake()
     {
@@ -36,6 +41,7 @@ public class SpriteMultiLineTimer : MonoBehaviour
     {
         timerTween?.Kill();
         float timerValue = time;
+        previousSecond = Mathf.CeilToInt(time);
 
         // 数値を変動させるTween
         timerTween = DOTween.To(
@@ -48,9 +54,44 @@ public class SpriteMultiLineTimer : MonoBehaviour
         .SetLink(gameObject); // オブジェクト破棄対策[2]
     }
 
+    public void RestartTimer(float time)
+    {
+        StartTimer(time);
+        limitedAudioSource.Stop();
+    }
+
+    // 一秒ごとに呼ばれる更新処理
+    private void UpratePerSeconds(int time)
+    {
+        // オーディオを再生
+        audioSource.PlayOneShot(audioSource.clip);
+
+        // 残り30秒を切るともう一音鳴らす
+        if (time == 30)
+        {
+            limitedAudioSource.Play();
+        }
+
+    }
+
     // 毎フレーム呼ばれる更新処理
     private void UpdateDisplay(float time)
     {
+        // Rキーが押されたらリスタート
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            RestartTimer(duration);
+            return;
+        }
+
+        int currentSecond = Mathf.CeilToInt(time);
+        if (currentSecond != previousSecond && previousSecond > 0)
+        {
+            UpratePerSeconds(currentSecond);
+            previousSecond = currentSecond;
+        }
+
+
         // 1. 各桁の数値を計算
         int m = Mathf.FloorToInt(time / 60f);
         int s = Mathf.FloorToInt(time % 60f);
@@ -78,5 +119,6 @@ public class SpriteMultiLineTimer : MonoBehaviour
                 currentIndices[i] = digit;
             }
         }
+
     }
 }

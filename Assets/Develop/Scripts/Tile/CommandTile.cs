@@ -5,7 +5,9 @@ using UnityEngine.Tilemaps;
 public class CommandTile : MonoBehaviour
 {
     private GameTile m_gameTile;
-    private Key m_key; // キー
+
+    [SerializeField]
+    private Key m_key = Key.None; // キー
 
     private void Awake()
     {

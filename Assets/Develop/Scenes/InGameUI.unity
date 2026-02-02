@@ -1285,7 +1285,7 @@ MonoBehaviour:
   min01: {fileID: 2021741781}
   sec10: {fileID: 671548153}
   sec01: {fileID: 1711017643}
-  duration: 99
+  duration: 5
 --- !u!1 &1839344917
 GameObject:
   m_ObjectHideFlags: 0

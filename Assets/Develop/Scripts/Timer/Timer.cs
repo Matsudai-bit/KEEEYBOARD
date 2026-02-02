@@ -57,7 +57,7 @@ public class SpriteMultiLineTimer : MonoBehaviour
         int ms = Mathf.FloorToInt((time * 100f) % 100f);
 
         // 2. 表示すべき数字（0-9）を配列化
-        int[] digits = new int[1];
+        int[] digits = new int[4];
         digits[0] = m / 10; // 分の10の位
         digits[1] = m % 10; // 分の1の位
         digits[2] = s / 10; // 秒の10の位
@@ -66,7 +66,7 @@ public class SpriteMultiLineTimer : MonoBehaviour
         //digits[5] = ms % 10; // ミリ秒の1の位
 
         // 3. 画像の適用（変更があった箇所のみ）
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 4; i++)
         {
             // インデックスが範囲内かチェック
             int digit = Mathf.Clamp(digits[i], 0, numberSprites.Length - 1);

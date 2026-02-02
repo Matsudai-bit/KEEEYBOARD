@@ -121,8 +121,8 @@ public class CommandSpriteData : ScriptableObject
 
         var states = (TileState[])Enum.GetValues(typeof(TileState));
 
-        int spriteNum = states.Length * m_usingKeyData.KeyCodes.Length;
-        for (int x = 0; x < m_usingKeyData.KeyCodes.Length; x++)
+        int spriteNum = states.Length * m_usingKeyData.KeyCodes.Count;
+        for (int x = 0; x < m_usingKeyData.KeyCodes.Count; x++)
         {
             Key keyCode = m_usingKeyData.KeyCodes[x];
 
@@ -132,7 +132,7 @@ public class CommandSpriteData : ScriptableObject
 
             for (int y = 0; y < states.Length; y++)
             {
-                int index = (m_usingKeyData.KeyCodes.Length * y) + x;
+                int index = (m_usingKeyData.KeyCodes.Count * y) + x;
 
                 SpriteAndTileStatePair spritePair = new SpriteAndTileStatePair
                 {
@@ -147,32 +147,7 @@ public class CommandSpriteData : ScriptableObject
             m_keyAndSpritePair.Add(keyAndSprite);
         }
 
-        //// UsingKeyDataのKeyCodesループ
-        //foreach (var keyCode in m_usingKeyData.KeyCodes)
-        //{
-        //    KeyAndSpritePair keyAndSprite = new KeyAndSpritePair();
-
-        //    // KeyCode (Unity標準) から InputSystemの Key に変換が必要な場合はキャスト等を行う
-        //    // ここでは仮に Key への変換として登録
-        //    keyAndSprite.keyName = keyCode.ToString();
-        //    // keyAndSprite.key = ... (型を合わせる)
-
-        //    keyAndSprite.spritePair = new List<SpriteAndTileStatePair>();
-
-        //    for (int j = 0; j < states.Length; j++)
-        //    {
-        //        SpriteAndTileStatePair spritePair = new SpriteAndTileStatePair
-        //        {
-        //            label = states[j].ToString(),
-        //            tileState = states[j],
-        //            sprite = null
-        //        };
-        //        keyAndSprite.spritePair.Add(spritePair);
-        //    }
-        //    keyAndSprite.keyName = keyCode.ToString();
-        //    keyAndSprite.key = keyCode;
-        //    m_keyAndSpritePair.Add(keyAndSprite);
-        //}
+   
 
         Debug.Log($"CommandSpriteData: {m_keyAndSpritePair.Count}件のキーデータを生成しました。");
     }

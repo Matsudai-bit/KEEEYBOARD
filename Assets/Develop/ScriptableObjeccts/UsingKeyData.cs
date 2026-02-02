@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,9 +9,9 @@ using UnityEngine.InputSystem;
 public class UsingKeyData : ScriptableObject
 {
     [SerializeField]
-    private Key[] keys;
+    private List<Key> keys;
 
-    public Key[] KeyCodes
+    public List<Key> KeyCodes
     {
         get { return keys; }
     }
@@ -18,10 +19,10 @@ public class UsingKeyData : ScriptableObject
     private void Reset()
     {
         // Key.A (1) から Key.Z (26) までの連続した値をキャストで取得
-        keys = new Key[26];
+        keys = new();
         for (int i = 0; i < 26; i++)
         {
-            keys[i] = (Key)((int)Key.A + i);
+            keys.Add( (Key)((int)Key.A + i));
         }
         Debug.Log("InputSystem用のA~Zキーを登録しました！");
     }

@@ -56,7 +56,7 @@ public class InputTest : MonoBehaviour
             if (key.wasPressedThisFrame && key.isPressed)
             {
                 // System.Array.Exists や LINQ を使うとループを二重に書かなくて済みます
-                if (System.Array.Exists(m_usingKey.KeyCodes, k => k == key.keyCode))
+                if (m_usingKey.KeyCodes.Exists( k => k == key.keyCode))
                 {
                     if (key.keyCode == Key.A)
                     {

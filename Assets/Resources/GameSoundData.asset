@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b87395668e4e084a97a7a7143459407, type: 3}
+  m_Name: GameSoundData
+  m_EditorClassIdentifier: 
+  soundData:
+  - labelName: SE_INGAME_TIMER_TICK
+    id: 5
+    clip: {fileID: 8300000, guid: 5b817dbae2d916849ac788fbeb94d87f, type: 3}
+  - labelName: SE_INGAME_TIMEER_WARNING
+    id: 6
+    clip: {fileID: 8300000, guid: 17cf8facd93d7a4429714c29bd549013, type: 3}

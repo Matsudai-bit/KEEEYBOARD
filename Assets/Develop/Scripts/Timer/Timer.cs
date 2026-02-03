@@ -16,10 +16,6 @@ public class SpriteMultiLineTimer : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private float duration = 65.0f; // タイマー時間
 
-    [Header("Sound Clip")]
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioSource limitedAudioSource;
-
     [Header("Fade Control")]
     [SerializeField] private CanvasGroup timerCanvasGroup;
 
@@ -30,6 +26,7 @@ public class SpriteMultiLineTimer : MonoBehaviour
     private int previousSecond = -1;
 
     private Tween fadeTween; // 生成したTweenを保持する変数
+    private int warningAudioSourceID = -1;
 
     void Awake()
     {
@@ -40,6 +37,12 @@ public class SpriteMultiLineTimer : MonoBehaviour
     void Start()
     {
         StartTimer(duration);
+
+        fadeTween = timerCanvasGroup.DOFade(0.165f, 0.5f)
+            .SetLoops(-1, LoopType.Yoyo)
+            .SetEase(Ease.InOutSine)
+            .SetLink(gameObject) // オブジェクト破棄対策
+            .Pause(); // 最初は停止しておく
     }
 
     public void StartTimer(float time)
@@ -72,27 +75,36 @@ public class SpriteMultiLineTimer : MonoBehaviour
         }
 
         StartTimer(time);
-        limitedAudioSource.Stop();
+        SoundManager.GetInstance.RequestStopping(warningAudioSourceID);
+    }
+
+    // タイマー時間の設定
+    public void SetDuration(float time)
+    {
+        duration = time;
+    }
+
+    // タイマー時間の取得
+    public float GetDuration()
+    {
+        return duration;
     }
 
     // 一秒ごとに呼ばれる更新処理
     private void UpratePerSeconds(int time)
     {
         // オーディオを再生
-        audioSource.PlayOneShot(audioSource.clip);
+        SoundManager.GetInstance.RequestPlaying(SoundID.SE_INGAME_TIMER_TICK);
 
         // 残り30秒を切るともう一音鳴らす
         if (time == 30)
         {
-            limitedAudioSource.Play();
+            warningAudioSourceID = SoundManager.GetInstance.RequestPlaying(SoundID.SE_INGAME_TIMEER_WARNING);
 
-            if(timerCanvasGroup != null)
+            if (timerCanvasGroup != null)
             {
                 Debug.Log("Start Fade Animation");
-                fadeTween = timerCanvasGroup.DOFade(0.165f, 0.5f)
-                    .SetLoops(-1, LoopType.Yoyo)
-                    .SetEase(Ease.InOutSine)
-                    .SetLink(gameObject); // オブジェクト破棄対策
+                fadeTween?.Restart();
             }
         }
 

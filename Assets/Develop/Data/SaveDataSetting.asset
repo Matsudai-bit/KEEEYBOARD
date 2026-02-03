@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d491776f85d823409f131a8a1f39618, type: 3}
   m_Name: SaveDataSetting
   m_EditorClassIdentifier: 
-  fileFullPath: 
-  saveDirectoryPath: 
-  fileName: 
+  fileFullPath: C:/Users/it242233/AppData/LocalLow/DefaultCompany/KEEEYBOARD\Assets/SaveData\SaveData
+  saveDirectoryPath: Assets/SaveData
+  fileName: SaveData

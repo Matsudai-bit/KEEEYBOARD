@@ -25,8 +25,8 @@ public class GameTile : MonoBehaviour
         COMMAND,        // コマンドタイル
         KEY,            // 鍵タイル
         LOCKED_DOOR,    // 鍵付き扉
-        PLAYER
-
+        PLAYER,
+        SAFE,
     }
 
     [Serializable]

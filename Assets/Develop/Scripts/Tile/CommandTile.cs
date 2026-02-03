@@ -13,6 +13,7 @@ public class CommandTile : MonoBehaviour
         VISITED,    // í âﬂçœÇ›
     }
 
+    [SerializeField]
     private State m_state;
 
     private GameTile m_gameTile;

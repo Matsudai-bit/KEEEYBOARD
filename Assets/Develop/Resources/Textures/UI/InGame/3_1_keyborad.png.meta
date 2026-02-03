@@ -1,0 +1,1793 @@
+fileFormatVersion: 2
+guid: 4f6795bbbb01c1f49827e3f2b549406c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9131454049750374695
+    second: 3_1_keyborad_0
+  - first:
+      213: 4971757254056679417
+    second: 3_1_keyborad_1
+  - first:
+      213: 5587681247218674839
+    second: 3_1_keyborad_2
+  - first:
+      213: 2542326372084322667
+    second: 3_1_keyborad_3
+  - first:
+      213: 8766638839215891304
+    second: 3_1_keyborad_4
+  - first:
+      213: 4205805965806491314
+    second: 3_1_keyborad_5
+  - first:
+      213: -4307030619508756815
+    second: 3_1_keyborad_6
+  - first:
+      213: 2063960834818601151
+    second: 3_1_keyborad_7
+  - first:
+      213: -5180864145850428330
+    second: 3_1_keyborad_8
+  - first:
+      213: -4043031799339905759
+    second: 3_1_keyborad_9
+  - first:
+      213: 3546760561771017151
+    second: 3_1_keyborad_10
+  - first:
+      213: 6433303408357848729
+    second: 3_1_keyborad_11
+  - first:
+      213: -4510015043818963885
+    second: 3_1_keyborad_12
+  - first:
+      213: -3555400034592142129
+    second: 3_1_keyborad_13
+  - first:
+      213: -5076007722439951055
+    second: 3_1_keyborad_14
+  - first:
+      213: -39603357294534826
+    second: 3_1_keyborad_15
+  - first:
+      213: -4261319098077892455
+    second: 3_1_keyborad_16
+  - first:
+      213: 2685280076182037212
+    second: 3_1_keyborad_17
+  - first:
+      213: -7629724557527547978
+    second: 3_1_keyborad_18
+  - first:
+      213: -4465446356230021938
+    second: 3_1_keyborad_19
+  - first:
+      213: -3619382680135527911
+    second: 3_1_keyborad_20
+  - first:
+      213: 7852556729846762393
+    second: 3_1_keyborad_21
+  - first:
+      213: -459178792945335635
+    second: 3_1_keyborad_22
+  - first:
+      213: -3955351781308066220
+    second: 3_1_keyborad_23
+  - first:
+      213: 3834285220929770772
+    second: 3_1_keyborad_24
+  - first:
+      213: -1899847441278354706
+    second: 3_1_keyborad_25
+  - first:
+      213: -1248610947141039659
+    second: 3_1_keyborad_26
+  - first:
+      213: 8751930845367795883
+    second: 3_1_keyborad_27
+  - first:
+      213: -4376891115826002271
+    second: 3_1_keyborad_28
+  - first:
+      213: 3756054252692687703
+    second: 3_1_keyborad_29
+  - first:
+      213: 1274722426761620503
+    second: 3_1_keyborad_30
+  - first:
+      213: 8417908570622902780
+    second: 3_1_keyborad_31
+  - first:
+      213: -112289099185954602
+    second: 3_1_keyborad_32
+  - first:
+      213: 330483258724695158
+    second: 3_1_keyborad_33
+  - first:
+      213: -1423220839184712984
+    second: 3_1_keyborad_34
+  - first:
+      213: 4617428148397673473
+    second: 3_1_keyborad_35
+  - first:
+      213: -2692729154810636378
+    second: 3_1_keyborad_36
+  - first:
+      213: -1210985379267297644
+    second: 3_1_keyborad_37
+  - first:
+      213: -7383687014121718135
+    second: 3_1_keyborad_38
+  - first:
+      213: 4735310824210735196
+    second: 3_1_keyborad_39
+  - first:
+      213: 1403811215973739722
+    second: 3_1_keyborad_40
+  - first:
+      213: 6974037856797206858
+    second: 3_1_keyborad_41
+  - first:
+      213: 1364372777031627282
+    second: 3_1_keyborad_42
+  - first:
+      213: 6765123570133930930
+    second: 3_1_keyborad_43
+  - first:
+      213: -7739241218387479098
+    second: 3_1_keyborad_44
+  - first:
+      213: 383633880546980065
+    second: 3_1_keyborad_45
+  - first:
+      213: -7783836018026530100
+    second: 3_1_keyborad_46
+  - first:
+      213: -6787506286920727046
+    second: 3_1_keyborad_47
+  - first:
+      213: 7794280355399169961
+    second: 3_1_keyborad_48
+  - first:
+      213: -5634487754889443845
+    second: 3_1_keyborad_49
+  - first:
+      213: -3371222834545641550
+    second: 3_1_keyborad_50
+  - first:
+      213: 1937071324385900291
+    second: 3_1_keyborad_51
+  - first:
+      213: -1161755781994944542
+    second: 3_1_keyborad_52
+  - first:
+      213: -7400615327849832108
+    second: 3_1_keyborad_53
+  - first:
+      213: -2488088239916402109
+    second: 3_1_keyborad_54
+  - first:
+      213: -3305706166185897324
+    second: 3_1_keyborad_55
+  - first:
+      213: -386195254630020950
+    second: 3_1_keyborad_56
+  - first:
+      213: -5843167445201426865
+    second: 3_1_keyborad_57
+  - first:
+      213: 6169036550446721272
+    second: 3_1_keyborad_58
+  - first:
+      213: -7706715348713788659
+    second: 3_1_keyborad_59
+  - first:
+      213: -7700292826149383780
+    second: 3_1_keyborad_60
+  - first:
+      213: 4011371053076262368
+    second: 3_1_keyborad_61
+  - first:
+      213: 1033826301688187731
+    second: 3_1_keyborad_62
+  - first:
+      213: 5975715609760148575
+    second: 3_1_keyborad_63
+  - first:
+      213: 1671261574196137050
+    second: 3_1_keyborad_64
+  - first:
+      213: -60484962981504163
+    second: 3_1_keyborad_65
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 3_1_keyborad_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 336
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7295c26e31179be70800000000000000
+      internalID: 9131454049750374695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_1
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 336
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f7158d81ea3ff440800000000000000
+      internalID: 4971757254056679417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_2
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 336
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79ca4925d7e6b8d40800000000000000
+      internalID: 5587681247218674839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_3
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 336
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6191379d58284320800000000000000
+      internalID: 2542326372084322667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_4
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 336
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8632b9d939b59a970800000000000000
+      internalID: 8766638839215891304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_5
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 336
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b65d1a1e360e5a30800000000000000
+      internalID: 4205805965806491314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_6
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 336
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1be237f987a5a34c0800000000000000
+      internalID: -4307030619508756815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_7
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 336
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb07ea5a179a4ac10800000000000000
+      internalID: 2063960834818601151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_8
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 336
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 654170d328fd918b0800000000000000
+      internalID: -5180864145850428330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_9
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 336
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12d8cb8dff344e7c0800000000000000
+      internalID: -4043031799339905759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_10
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 336
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb3f9bb70ff983130800000000000000
+      internalID: 3546760561771017151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_11
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 336
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 996ba736d5fa74950800000000000000
+      internalID: 6433303408357848729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_12
+      rect:
+        serializedVersion: 2
+        x: 1054
+        y: 336
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35cb08576353961c0800000000000000
+      internalID: -4510015043818963885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_13
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 336
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcc49bf718ea8aec0800000000000000
+      internalID: -3555400034592142129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_14
+      rect:
+        serializedVersion: 2
+        x: 1229
+        y: 336
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13db3daced56e89b0800000000000000
+      internalID: -5076007722439951055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 251
+        width: 129
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65fdb84d4fc437ff0800000000000000
+      internalID: -39603357294534826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_16
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 251
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 990ba749bd0ccd4c0800000000000000
+      internalID: -4261319098077892455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_17
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 251
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd2a3478008044520800000000000000
+      internalID: 2685280076182037212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_18
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 251
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bffe7e50f5cd1690800000000000000
+      internalID: -7629724557527547978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_19
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 251
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eccd85da23c8702c0800000000000000
+      internalID: -4465446356230021938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_20
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 251
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9121254f0ae55cdc0800000000000000
+      internalID: -3619382680135527911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_21
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 251
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99b8e1dbdb2e9fc60800000000000000
+      internalID: 7852556729846762393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_22
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 251
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da2c916125ba0a9f0800000000000000
+      internalID: -459178792945335635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_23
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 251
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4569c61e284cb19c0800000000000000
+      internalID: -3955351781308066220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_24
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 251
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4159c01f71e163530800000000000000
+      internalID: 3834285220929770772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_25
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 251
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eea3b2761d262a5e0800000000000000
+      internalID: -1899847441278354706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_26
+      rect:
+        serializedVersion: 2
+        x: 1017
+        y: 251
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d98ef085fa0caee0800000000000000
+      internalID: -1248610947141039659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_27
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 251
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba08ee0fbba157970800000000000000
+      internalID: 8751930845367795883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_28
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 169
+        width: 115
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a6c0ac48b82243c0800000000000000
+      internalID: -4376891115826002271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 169
+        width: 158
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75bc7d0417f202430800000000000000
+      internalID: 3756054252692687703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_30
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 169
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71ca95a1b49b0b110800000000000000
+      internalID: 1274722426761620503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_31
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 169
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf1c1b7be3b62d470800000000000000
+      internalID: 8417908570622902780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_32
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 169
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d06fd2c8a1117ef0800000000000000
+      internalID: -112289099185954602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_33
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 169
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67cbf78d5cc169400800000000000000
+      internalID: 330483258724695158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_34
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 169
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ea3673ff24bf3ce0800000000000000
+      internalID: -1423220839184712984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_35
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 169
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10c0221df66641040800000000000000
+      internalID: 4617428148397673473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_36
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 169
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a79c23b91181aad0800000000000000
+      internalID: -2692729154810636378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_37
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 169
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49eb490b637b13fe0800000000000000
+      internalID: -1210985379267297644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_38
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 169
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98e3c96f7cfd78990800000000000000
+      internalID: -7383687014121718135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_39
+      rect:
+        serializedVersion: 2
+        x: 958
+        y: 169
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c50a42a1b1437b140800000000000000
+      internalID: 4735310824210735196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_40
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 169
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acce2dbfcd65b7310800000000000000
+      internalID: 1403811215973739722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_41
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 169
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4926801b72c8c060800000000000000
+      internalID: 6974037856797206858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 86
+        width: 188
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 212fe2cdfc93fe210800000000000000
+      internalID: 1364372777031627282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_43
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 85
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b3947b3b0c82ed50800000000000000
+      internalID: 6765123570133930930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_44
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 85
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c5f3fabd11b89490800000000000000
+      internalID: -7739241218387479098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_45
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 85
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e0bec55bf0f25500800000000000000
+      internalID: 383633880546980065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_46
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 85
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cca33a3d1624af390800000000000000
+      internalID: -7783836018026530100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_47
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 85
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af50c596efeedc1a0800000000000000
+      internalID: -6787506286920727046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_48
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 85
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a77f57ffa8da2c60800000000000000
+      internalID: 7794280355399169961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_49
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 85
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf5c68e5d374ec1b0800000000000000
+      internalID: -5634487754889443845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_50
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 85
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b7b83881b20731d0800000000000000
+      internalID: -3371222834545641550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_51
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 85
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 307fd924b1cd1ea10800000000000000
+      internalID: 1937071324385900291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_52
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 85
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e76f62854d90efe0800000000000000
+      internalID: -1161755781994944542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_53
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 85
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4512338c19bbb4990800000000000000
+      internalID: -7400615327849832108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_54
+      rect:
+        serializedVersion: 2
+        x: 1165
+        y: 85
+        width: 142
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34ab4f1ade8887dd0800000000000000
+      internalID: -2488088239916402109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_55
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 129
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 492dba891c5cf12d0800000000000000
+      internalID: -3305706166185897324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_56
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 0
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa806d94675f3aaf0800000000000000
+      internalID: -386195254630020950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_57
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 0
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4664a1ca26e8eea0800000000000000
+      internalID: -5843167445201426865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_58
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 0
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f827c3ce02dc9550800000000000000
+      internalID: 6169036550446721272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_59
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 0
+        width: 333
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0b2dd6e83f3c0590800000000000000
+      internalID: -7706715348713788659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_60
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 0
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9190e6f870132590800000000000000
+      internalID: -7700292826149383780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_61
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 0
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ed25e838b04ba730800000000000000
+      internalID: 4011371053076262368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_62
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 0
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35b849f3b83e85e00800000000000000
+      internalID: 1033826301688187731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_63
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 0
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5ca286bfa10ee250800000000000000
+      internalID: 5975715609760148575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_64
+      rect:
+        serializedVersion: 2
+        x: 1090
+        y: 0
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5c88b80c83813710800000000000000
+      internalID: 1671261574196137050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3_1_keyborad_65
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 0
+        width: 129
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5b1c332f3d192ff0800000000000000
+      internalID: -60484962981504163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

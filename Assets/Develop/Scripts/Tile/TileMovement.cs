@@ -23,9 +23,9 @@ public class TileDirectionData
         new (-1,  0),   // RIGHT
     };
 
-    static public Vector3Int GetMoveDirection(Direction direction)
+    static public Vector3Int GetMoveDirection(Direction direction, bool reverse = false)
     {
-        return TileDirectionData.moveDirection[(int)(direction)];
+        return ((reverse)?-1:1) * TileDirectionData.moveDirection[(int)(direction)];
     }
 }
 
@@ -58,9 +58,12 @@ public class TileMovement : MonoBehaviour
 
         ApplyMove(newPosition);
     }
-    public void MoveTile(TileDirectionData.Direction moveDirection)
+    public void MoveTile(TileDirectionData.Direction moveDirection, bool reverseVector = false)
     {
         var moveDirectionVector = TileDirectionData.GetMoveDirection(moveDirection);
+
+        moveDirectionVector *= (reverseVector) ? -1 : 1;
+
         MoveTile(moveDirectionVector);
 
     }

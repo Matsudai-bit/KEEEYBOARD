@@ -428,3 +428,15 @@ MonoBehaviour:
     - label: VISITED
       tileState: 2
       sprite: {fileID: 1665442982, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
+  - keyName: Space
+    key: 1
+    spritePair:
+    - label: DEFAULT
+      tileState: 0
+      sprite: {fileID: 359424045, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
+    - label: MOVABLE
+      tileState: 1
+      sprite: {fileID: 359424045, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
+    - label: VISITED
+      tileState: 2
+      sprite: {fileID: 359424045, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}

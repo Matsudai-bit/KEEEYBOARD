@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      3_1_rogubackground_0: 7655404827494367349
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 {
     private GameTile m_gameTile;
     private TileMovement m_tileMovement;
+    
 
     private PlayerMovableTileSelector m_movableTileSelector; // 移動可能タイル選択器
 
@@ -37,13 +38,14 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        FindCandidates();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        m_movableTileSelector.FindCandidates();
+
         var keyboard = Keyboard.current;
         if (keyboard == null) return;
 
@@ -67,11 +69,11 @@ public class PlayerController : MonoBehaviour
     {
         if (m_movableTileSelector.IsFoundTile(pressedKey))
         {
-          
             m_pushedKeys.Add(pressedKey);
             var directionID = m_movableTileSelector.GetDirection(pressedKey);
             m_tileMovement.MoveTile(directionID);
             m_moveDirections.Add(directionID);
+            FindCandidates();
         }
         Debug.Log("pressed" + pressedKey.ToString());
     }
@@ -86,7 +88,7 @@ public class PlayerController : MonoBehaviour
                 Key currentKey = m_pushedKeys[i];
 
                 // タイルの移動処理
-                m_movableTileSelector.FindCandidates();
+                FindCandidates();
                 m_tileMovement.MoveTile(-TileDirectionData.GetMoveDirection(m_moveDirections[i]));
 
                 // リストから削除（現在のインデックスを消す）
@@ -100,7 +102,35 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+        FindCandidates();
+
         Debug.Log("released" + releasedKey.ToString());
 
+    }
+
+    void FindCandidates()
+    {
+        ChangeDefaultStateOfCandidatesTile();
+
+        m_movableTileSelector.FindCandidates();
+
+        ChangeMovableStateOfCandidatesTile();
+
+    }
+
+    void ChangeDefaultStateOfCandidatesTile()
+    {
+        foreach (var candidate in m_movableTileSelector.GetCandidates())
+        {
+            candidate.SetState(CommandTile.State.DEFAULT);
+        }
+    }
+
+    void ChangeMovableStateOfCandidatesTile()
+    {
+        foreach (var candidate in m_movableTileSelector.GetCandidates())
+        {
+            candidate.SetState(CommandTile.State.MOVABLE);
+        }
     }
 }

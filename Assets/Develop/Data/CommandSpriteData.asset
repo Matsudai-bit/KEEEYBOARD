@@ -122,10 +122,10 @@ MonoBehaviour:
     - label: DEFAULT
       tileState: 0
       sprite: {fileID: 782618086, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: VISITED
+    - label: MOVABLE
       tileState: 1
       sprite: {fileID: -1202900912, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: MOVABLE
+    - label: VISITED
       tileState: 2
       sprite: {fileID: 1507625278, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
   - keyName: B
@@ -134,10 +134,10 @@ MonoBehaviour:
     - label: DEFAULT
       tileState: 0
       sprite: {fileID: -785148529, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: VISITED
+    - label: MOVABLE
       tileState: 1
       sprite: {fileID: -509205990, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: MOVABLE
+    - label: VISITED
       tileState: 2
       sprite: {fileID: -400215901, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
   - keyName: C
@@ -146,10 +146,10 @@ MonoBehaviour:
     - label: DEFAULT
       tileState: 0
       sprite: {fileID: -202374804, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: VISITED
+    - label: MOVABLE
       tileState: 1
       sprite: {fileID: -1719399205, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: MOVABLE
+    - label: VISITED
       tileState: 2
       sprite: {fileID: 1753780701, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
   - keyName: D
@@ -158,10 +158,10 @@ MonoBehaviour:
     - label: DEFAULT
       tileState: 0
       sprite: {fileID: 105402451, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: VISITED
+    - label: MOVABLE
       tileState: 1
       sprite: {fileID: 1202672001, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: MOVABLE
+    - label: VISITED
       tileState: 2
       sprite: {fileID: -1927811284, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
   - keyName: E
@@ -170,10 +170,10 @@ MonoBehaviour:
     - label: DEFAULT
       tileState: 0
       sprite: {fileID: 2021504047, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: VISITED
+    - label: MOVABLE
       tileState: 1
       sprite: {fileID: 1974809740, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: MOVABLE
+    - label: VISITED
       tileState: 2
       sprite: {fileID: -683422554, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
   - keyName: F
@@ -182,10 +182,10 @@ MonoBehaviour:
     - label: DEFAULT
       tileState: 0
       sprite: {fileID: 107752752, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: VISITED
+    - label: MOVABLE
       tileState: 1
       sprite: {fileID: 1205603554, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: MOVABLE
+    - label: VISITED
       tileState: 2
       sprite: {fileID: -2076137524, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
   - keyName: G
@@ -194,10 +194,10 @@ MonoBehaviour:
     - label: DEFAULT
       tileState: 0
       sprite: {fileID: -1241976953, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: VISITED
+    - label: MOVABLE
       tileState: 1
       sprite: {fileID: 137280885, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: MOVABLE
+    - label: VISITED
       tileState: 2
       sprite: {fileID: 402895819, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
   - keyName: H
@@ -206,10 +206,10 @@ MonoBehaviour:
     - label: DEFAULT
       tileState: 0
       sprite: {fileID: 1701738603, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: VISITED
+    - label: MOVABLE
       tileState: 1
       sprite: {fileID: -220616281, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: MOVABLE
+    - label: VISITED
       tileState: 2
       sprite: {fileID: -659714962, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
   - keyName: I
@@ -218,10 +218,10 @@ MonoBehaviour:
     - label: DEFAULT
       tileState: 0
       sprite: {fileID: 791205528, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: VISITED
+    - label: MOVABLE
       tileState: 1
       sprite: {fileID: 1136625004, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: MOVABLE
+    - label: VISITED
       tileState: 2
       sprite: {fileID: -60523046, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
   - keyName: J
@@ -230,10 +230,10 @@ MonoBehaviour:
     - label: DEFAULT
       tileState: 0
       sprite: {fileID: 136986801, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: VISITED
+    - label: MOVABLE
       tileState: 1
       sprite: {fileID: -628479872, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: MOVABLE
+    - label: VISITED
       tileState: 2
       sprite: {fileID: 318235837, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
   - keyName: K
@@ -242,10 +242,10 @@ MonoBehaviour:
     - label: DEFAULT
       tileState: 0
       sprite: {fileID: 855068768, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: VISITED
+    - label: MOVABLE
       tileState: 1
       sprite: {fileID: -164426692, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: MOVABLE
+    - label: VISITED
       tileState: 2
       sprite: {fileID: -837194964, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
   - keyName: L
@@ -254,10 +254,10 @@ MonoBehaviour:
     - label: DEFAULT
       tileState: 0
       sprite: {fileID: -1738137120, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: VISITED
+    - label: MOVABLE
       tileState: 1
       sprite: {fileID: -1339252919, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: MOVABLE
+    - label: VISITED
       tileState: 2
       sprite: {fileID: 362909306, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
   - keyName: M
@@ -266,10 +266,10 @@ MonoBehaviour:
     - label: DEFAULT
       tileState: 0
       sprite: {fileID: 1215543073, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: VISITED
+    - label: MOVABLE
       tileState: 1
       sprite: {fileID: -1514588620, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: MOVABLE
+    - label: VISITED
       tileState: 2
       sprite: {fileID: 1673343815, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
   - keyName: N
@@ -278,10 +278,10 @@ MonoBehaviour:
     - label: DEFAULT
       tileState: 0
       sprite: {fileID: 1339927509, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: VISITED
+    - label: MOVABLE
       tileState: 1
       sprite: {fileID: 1051556343, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: MOVABLE
+    - label: VISITED
       tileState: 2
       sprite: {fileID: -2020964681, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
   - keyName: O
@@ -290,10 +290,10 @@ MonoBehaviour:
     - label: DEFAULT
       tileState: 0
       sprite: {fileID: -902970311, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: VISITED
+    - label: MOVABLE
       tileState: 1
       sprite: {fileID: 291914849, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: MOVABLE
+    - label: VISITED
       tileState: 2
       sprite: {fileID: -1122861779, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
   - keyName: P
@@ -302,10 +302,10 @@ MonoBehaviour:
     - label: DEFAULT
       tileState: 0
       sprite: {fileID: 1944790977, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: VISITED
+    - label: MOVABLE
       tileState: 1
       sprite: {fileID: 1223953904, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: MOVABLE
+    - label: VISITED
       tileState: 2
       sprite: {fileID: 253881391, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
   - keyName: Q
@@ -314,10 +314,10 @@ MonoBehaviour:
     - label: DEFAULT
       tileState: 0
       sprite: {fileID: 1262396415, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: VISITED
+    - label: MOVABLE
       tileState: 1
       sprite: {fileID: 1007168574, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: MOVABLE
+    - label: VISITED
       tileState: 2
       sprite: {fileID: -623429201, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
   - keyName: R
@@ -326,10 +326,10 @@ MonoBehaviour:
     - label: DEFAULT
       tileState: 0
       sprite: {fileID: -1159925750, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: VISITED
+    - label: MOVABLE
       tileState: 1
       sprite: {fileID: 941602271, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: MOVABLE
+    - label: VISITED
       tileState: 2
       sprite: {fileID: 534850757, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
   - keyName: S
@@ -338,10 +338,10 @@ MonoBehaviour:
     - label: DEFAULT
       tileState: 0
       sprite: {fileID: -30782311, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: VISITED
+    - label: MOVABLE
       tileState: 1
       sprite: {fileID: -1974352742, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: MOVABLE
+    - label: VISITED
       tileState: 2
       sprite: {fileID: 1659835335, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
   - keyName: T
@@ -350,10 +350,10 @@ MonoBehaviour:
     - label: DEFAULT
       tileState: 0
       sprite: {fileID: -408358624, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: VISITED
+    - label: MOVABLE
       tileState: 1
       sprite: {fileID: -459979105, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: MOVABLE
+    - label: VISITED
       tileState: 2
       sprite: {fileID: -1195451785, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
   - keyName: U
@@ -362,10 +362,10 @@ MonoBehaviour:
     - label: DEFAULT
       tileState: 0
       sprite: {fileID: -844046336, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: VISITED
+    - label: MOVABLE
       tileState: 1
       sprite: {fileID: 1070952451, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: MOVABLE
+    - label: VISITED
       tileState: 2
       sprite: {fileID: 1522598276, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
   - keyName: V
@@ -374,10 +374,10 @@ MonoBehaviour:
     - label: DEFAULT
       tileState: 0
       sprite: {fileID: -1912451560, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: VISITED
+    - label: MOVABLE
       tileState: 1
       sprite: {fileID: 1760743441, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: MOVABLE
+    - label: VISITED
       tileState: 2
       sprite: {fileID: 535022083, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
   - keyName: W
@@ -386,10 +386,10 @@ MonoBehaviour:
     - label: DEFAULT
       tileState: 0
       sprite: {fileID: 149862952, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: VISITED
+    - label: MOVABLE
       tileState: 1
       sprite: {fileID: -1737153918, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: MOVABLE
+    - label: VISITED
       tileState: 2
       sprite: {fileID: -754120502, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
   - keyName: X
@@ -398,10 +398,10 @@ MonoBehaviour:
     - label: DEFAULT
       tileState: 0
       sprite: {fileID: 1207841898, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: VISITED
+    - label: MOVABLE
       tileState: 1
       sprite: {fileID: -1147268933, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: MOVABLE
+    - label: VISITED
       tileState: 2
       sprite: {fileID: -1509449037, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
   - keyName: Y
@@ -410,10 +410,10 @@ MonoBehaviour:
     - label: DEFAULT
       tileState: 0
       sprite: {fileID: -254450136, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: VISITED
+    - label: MOVABLE
       tileState: 1
       sprite: {fileID: 1601547982, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: MOVABLE
+    - label: VISITED
       tileState: 2
       sprite: {fileID: 890681334, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
   - keyName: Z
@@ -422,9 +422,9 @@ MonoBehaviour:
     - label: DEFAULT
       tileState: 0
       sprite: {fileID: 391709859, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: VISITED
+    - label: MOVABLE
       tileState: 1
       sprite: {fileID: 1025967354, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
-    - label: MOVABLE
+    - label: VISITED
       tileState: 2
       sprite: {fileID: 1665442982, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}

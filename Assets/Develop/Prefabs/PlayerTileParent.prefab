@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bf5f4a9688ef424498220c340338708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameTile: {fileID: 0}
+  child: {fileID: 0}
 --- !u!1 &7515176513001890559
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,6 +110,7 @@ MonoBehaviour:
   m_tilemapData:
     baseTilemap: {fileID: 0}
     topTilemap: {fileID: 0}
+  m_tileType: 4
 --- !u!114 &5670908885478626775
 MonoBehaviour:
   m_ObjectHideFlags: 0

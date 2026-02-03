@@ -43,6 +43,11 @@ public class PlayerMovableTileSelector
         return m_movementCandidates[direction];
     }
 
+    public List<CommandTile> GetCandidates()
+    {
+        return m_movementCandidates.Values.ToList();
+    }
+
     public void FindCandidates()
     {
         var directions = (TileDirectionData.Direction[])Enum.GetValues(typeof(TileDirectionData.Direction));

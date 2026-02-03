@@ -6,6 +6,9 @@ using UnityEngine.Tilemaps;
 public class GameTileManager : MonoBehaviour
 {
     [SerializeField]
+    GameDirector m_gameDirector;
+
+    [SerializeField]
     private string m_commandTiletipBaseName;
     [SerializeField]
     private Tilemap m_baseTilemap;
@@ -31,9 +34,9 @@ public class GameTileManager : MonoBehaviour
         }
 
         // タイルマップの座標を設定
-        InitializeTilemap(m_baseTilemap, m_gameTileDict, m_commandTiletipBaseName, m_usingKey, m_baseTilemap, m_topTilemap, m_commandSpriteData);
+        InitializeTilemap(m_baseTilemap, m_gameTileDict, m_commandTiletipBaseName, m_usingKey, m_baseTilemap, m_topTilemap, m_commandSpriteData, m_gameDirector);
 
-        InitializeTilemap(m_topTilemap, m_gameTileDict, m_commandTiletipBaseName, m_usingKey, m_baseTilemap, m_topTilemap, m_commandSpriteData);
+        InitializeTilemap(m_topTilemap, m_gameTileDict, m_commandTiletipBaseName, m_usingKey, m_baseTilemap, m_topTilemap, m_commandSpriteData, m_gameDirector);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -82,7 +85,7 @@ public class GameTileManager : MonoBehaviour
     }
 
     // 1つのメソッドで「座標セット」と「辞書登録」を同時に行う
-    static void InitializeTilemap( Tilemap tilemap, Dictionary<Key, List<GameTile>> dict, string baseName, UsingKeyData keys, Tilemap baseTilemap, Tilemap topTilemap, CommandSpriteData commandSpriteData)
+    static void InitializeTilemap( Tilemap tilemap, Dictionary<Key, List<GameTile>> dict, string baseName, UsingKeyData keys, Tilemap baseTilemap, Tilemap topTilemap, CommandSpriteData commandSpriteData, GameDirector gameDirector)
     {
         foreach (Vector3Int pos in tilemap.cellBounds.allPositionsWithin)
         {
@@ -97,18 +100,28 @@ public class GameTileManager : MonoBehaviour
                 gameTile.Tilemap    = tilemap; // タイルマップセット
                 gameTile.TilemapDatta = new(baseTilemap, topTilemap);
 
+                if (gameTile.GetTileType() == GameTile.TileType.LOCKED_DOOR)
+                {
+                    gameDirector.AddLockDoor();
+                }
+
                 // ついでにコマンドタイルの判定もここで行う
                 TileBase asset = tilemap.GetTile(pos);
-                if (gameTile.GetTileType() == GameTile.TileType.COMMAND)
+                CommandTile commandTile = tileObj.GetComponent<CommandTile>();
+                if (commandTile)
                 {
-                    string keyName = asset.name.Replace(baseName, "");
-                    Key code = keys.KeyCodes.Find(k => keyName == k.ToString());
+                    commandTile.SpriteData= commandSpriteData;
+                    if (gameTile.GetTileType() == GameTile.TileType.COMMAND)
+                    {
 
-                    var commandTile = tileObj.AddComponent<CommandTile>();
-                    commandTile.Key = code;
-                    commandTile.SpriteData = commandSpriteData;
-                    if (dict.ContainsKey(code)) dict[code].Add(gameTile);
+                        string keyName = asset.name.Replace(baseName, "");
+                        Key code = keys.KeyCodes.Find(k => keyName == k.ToString());
+
+                        commandTile.Key = code;
+                    }
+                    if (dict.ContainsKey(commandTile.Key)) dict[commandTile.Key].Add(gameTile);
                 }
+               
             }
         }
     }

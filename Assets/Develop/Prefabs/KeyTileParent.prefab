@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7599550637830293126}
+  - component: {fileID: 6810650223897595319}
   m_Layer: 0
   m_Name: KeyTileParent
   m_TagString: Untagged
@@ -32,6 +33,20 @@ Transform:
   - {fileID: 3513343551385650224}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6810650223897595319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094246450232754500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bf5f4a9688ef424498220c340338708, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameTile: {fileID: 6220914219249692514}
+  child: {fileID: 7199262556582568766}
 --- !u!1 &7199262556582568766
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,6 +57,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3513343551385650224}
   - component: {fileID: 6220914219249692514}
+  - component: {fileID: 4876819662018059302}
   m_Layer: 0
   m_Name: KeyTile
   m_TagString: Untagged
@@ -81,4 +97,17 @@ MonoBehaviour:
   m_tilemapData:
     baseTilemap: {fileID: 0}
     topTilemap: {fileID: 0}
-  m_tileType: 1
+  m_tileType: 2
+--- !u!114 &4876819662018059302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7199262556582568766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 076b8188140ece54db1c5f4a70397497, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_gameTile: {fileID: 0}

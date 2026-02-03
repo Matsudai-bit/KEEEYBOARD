@@ -1,9 +1,7 @@
-using NUnit.Framework;
 using System.Collections.Generic;
-using UnityEditor.Tilemaps;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Tilemaps;
 
 /// <summary>
 /// プレイヤーのコントローラ
@@ -18,8 +16,19 @@ public class PlayerController : MonoBehaviour
 
     bool isPressed = false;
     Vector3Int m_pressedStartPosition;
-    List<Key> m_pushedKeys = new();
-    List<TileDirectionData.Direction> m_moveDirections = new();
+    List<VisitedTileData> m_visitedTileData = new();
+
+    struct VisitedTileData
+    {
+        public CommandTile commandTile;
+        public TileDirectionData.Direction directionID;
+
+        public VisitedTileData(CommandTile commandTile, TileDirectionData.Direction directionID)
+        {
+            this.commandTile = commandTile;
+            this.directionID = directionID;
+        }
+    }
     private void Awake()
     {
         m_gameTile = gameObject?.GetComponent<GameTile>();
@@ -78,29 +87,44 @@ public class PlayerController : MonoBehaviour
             var directionID = m_movableTileSelector.GetDirection(pressedKey);
             if (TryMoveTile(directionID))
             {
-                m_moveDirections.Add(directionID);
-                m_pushedKeys.Add(pressedKey);
+                var visitedTile = m_gameTile.TilemapDatta.baseTilemap.GetInstantiatedObject(m_gameTile.CellPosition).GetComponent<GameTileParent>().Child.GetComponent<CommandTile>();
+                m_visitedTileData.Add(new VisitedTileData(visitedTile, directionID));
 
+                VisitTile(m_gameTile.CellPosition);
+                if (visitedTile.GameTile.GetTileType() == GameTile.TileType.SAFE)
+                {
+                    StayTile();
+                }
             }
+
+            FindCandidates();
         }
         Debug.Log("pressed" + pressedKey.ToString());
     }
     private void OnReleaseKey(Key releasedKey)
     {
-        if (m_pushedKeys.Contains(releasedKey))
+        if (m_visitedTileData.Any(item => item.commandTile.Key == releasedKey))
         {
             // リストの末尾から先頭に向かってループを回す
-            for (int i = m_pushedKeys.Count - 1; i >= 0; i--)
+            for (int i = m_visitedTileData.Count - 1; i >= 0; i--)
             {
+                CancelVisitTile(m_gameTile.CellPosition);
+
                 // 処理対象のキーを取得
-                Key currentKey = m_pushedKeys[i];
+                Key currentKey = m_visitedTileData[i].commandTile.Key;
 
                 // タイルの移動処理
                 FindCandidates();
-                TryMoveTile(m_moveDirections[i], true);
-                // リストから削除（現在のインデックスを消す）
-                m_pushedKeys.RemoveAt(i);
-                m_moveDirections.RemoveAt(i);
+
+                var oldPosition = m_gameTile.CellPosition;
+                if (TryMoveTile(m_visitedTileData[i].directionID, true))
+                {
+                    CancelVisitTile(m_gameTile.CellPosition);
+
+                    // リストから削除（現在のインデックスを消す）
+                    m_visitedTileData.RemoveAt(i);
+
+                }
 
                 // 離されたキーに到達したらループ終了
                 if (currentKey == releasedKey)
@@ -137,6 +161,7 @@ public class PlayerController : MonoBehaviour
                 if (m_keyBox.KeyCount > 0)
                 {
                     m_keyBox.RestoreKey();
+                    PlayerEventMessenger.GetInstance.Notify(PlayerEventID.UNLOCK, m_gameTile);
                 }
                 else
                 {
@@ -168,7 +193,8 @@ public class PlayerController : MonoBehaviour
     {
         foreach (var candidate in m_movableTileSelector.GetCandidates())
         {
-            candidate.SetState(CommandTile.State.DEFAULT);
+            if (candidate.GetState() != CommandTile.State.VISITED)
+                candidate.SetState(CommandTile.State.DEFAULT);
         }
     }
 
@@ -176,7 +202,41 @@ public class PlayerController : MonoBehaviour
     {
         foreach (var candidate in m_movableTileSelector.GetCandidates())
         {
-            candidate.SetState(CommandTile.State.MOVABLE);
+            if (candidate.GetState() != CommandTile.State.VISITED)
+                candidate.SetState(CommandTile.State.MOVABLE);
         }
+    }
+
+
+    /// <summary>
+    /// タイルを訪れる
+    /// </summary>
+    /// <param name="visitedTilePosition"></param>
+    void VisitTile(Vector3Int visitedTilePosition)
+    {
+        var visitedTileObject = m_gameTile.TilemapDatta.baseTilemap.GetInstantiatedObject(visitedTilePosition);
+        if (visitedTileObject && visitedTileObject.GetComponent<GameTileParent>() && visitedTileObject.GetComponent<GameTileParent>().Child.GetComponent<CommandTile>())
+        {
+            visitedTileObject.GetComponent<GameTileParent>().Child.GetComponent<CommandTile>().SetState(CommandTile.State.VISITED);
+        }
+    }
+
+    void CancelVisitTile(Vector3Int visitedTilePosition)
+    {
+        var visitedTileObject = m_gameTile.TilemapDatta.baseTilemap.GetInstantiatedObject(visitedTilePosition);
+        if (visitedTileObject && visitedTileObject.GetComponent<GameTileParent>() && visitedTileObject.GetComponent<GameTileParent>().Child.GetComponent<CommandTile>())
+        {
+            visitedTileObject.GetComponent<GameTileParent>().Child.GetComponent<CommandTile>().SetState(CommandTile.State.DEFAULT);
+        }
+    }
+
+    void StayTile()
+    {
+        foreach (var visitedTile in m_visitedTileData)
+        {
+            visitedTile.commandTile.SetState(CommandTile.State.DEFAULT);
+        }
+        m_visitedTileData.Clear();
+
     }
 }

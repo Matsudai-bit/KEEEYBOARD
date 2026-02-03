@@ -6,6 +6,7 @@ using UnityEngine;
 public enum PlayerEventID
 {
     GET_KEY,        // Œ®‚ðŽæ“¾
+    UNLOCK,
 
 }
 

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 418159172710294746}
   - component: {fileID: 5291306303261481642}
   m_Layer: 0
-  m_Name: GameTileParent
+  m_Name: SafeTileParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,8 +57,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1243586469607780368}
   - component: {fileID: 5870402268707463807}
+  - component: {fileID: 8178049749810084942}
   m_Layer: 0
-  m_Name: GameTile
+  m_Name: SafeTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,4 +97,18 @@ MonoBehaviour:
   m_tilemapData:
     baseTilemap: {fileID: 0}
     topTilemap: {fileID: 0}
-  m_tileType: 1
+  m_tileType: 5
+--- !u!114 &8178049749810084942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7292815566814512071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca81c83ccab1d3a4ea0382224c9c0ad2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_spriteData: {fileID: 0}
+  m_key: 1

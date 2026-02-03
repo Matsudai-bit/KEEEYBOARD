@@ -1,0 +1,151 @@
+using UnityEngine;
+
+public class StageSelectManager : MonoBehaviour
+{
+
+    [Header("UI References")]
+    [SerializeField]
+    private UnityEngine.CanvasGroup Boards;
+
+
+    // 階級を示す列挙
+    public enum StageGrade
+    {
+        GRADE1,
+        GRADE2,
+        GRADE3,
+    }
+
+    // ステージを示す列挙
+    public enum StageID
+    {
+        // GRADE1
+        STAGE1_1,
+        STAGE1_2,
+        STAGE1_3,
+        // GRADE2
+        STAGE2_1,
+        STAGE2_2,
+        STAGE2_3,
+        // GRADE3
+        STAGE3_1,
+        STAGE3_2,
+        STAGE3_3,
+    }
+
+    // 選択状態を示す列挙
+    private enum SelectionState
+    {
+        GRADE_SELECTION,    // 階級を選択中
+        STAGE_SELECTION,    // ステージを選択中
+    }
+
+
+    private SelectionState currentState = SelectionState.GRADE_SELECTION; // 現在の選択状態
+
+    private int currentGradeIndex = 0; // 現在の階級インデックス
+    private int currentStageIndex = 0; // 現在のステージインデックス
+
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if(currentState == SelectionState.GRADE_SELECTION)
+        {
+            // 階級選択中の処理
+            HandleGradeSelection();
+        }
+        else if (currentState == SelectionState.STAGE_SELECTION)
+        {
+            // ステージ選択中の処理
+            HandleStageSelection();
+        }
+    }
+
+
+
+
+    // 階級選択の処理
+    private void HandleGradeSelection()
+    {
+        // 入力に応じてcurrentGradeIndexを更新(左右キー)
+        if(Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            ChangeGradeIndex(1);
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            ChangeGradeIndex(-1);
+        }
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            // ステージ選択へ移行
+            currentState = SelectionState.STAGE_SELECTION;
+            Debug.Log("Switched to Stage Selection");
+        }
+
+    }
+
+
+    // ステージ選択の処理
+    private void HandleStageSelection()
+    {
+        // 入力に応じてcurrentStageIndexを更新(左右キー)
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            ChangeStageIndex(1);
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            ChangeStageIndex(-1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            // 階級選択へ戻る
+            currentState = SelectionState.GRADE_SELECTION;
+            // ステージインデックスをリセット
+            currentStageIndex = 0;
+            Debug.Log("Switched to Grade Selection");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            // ステージ確定の処理(階級 * 3 + ステージ番号)
+            StageID selectedStage = (StageID)(currentGradeIndex * 3 + currentStageIndex);
+            Debug.Log("Selected Stage: " + selectedStage);
+        }
+
+    }
+
+
+
+    // 階級インデックスの変更
+    private void ChangeGradeIndex(int add)
+    {
+        currentGradeIndex += add;
+        currentGradeIndex = Mathf.Clamp(currentGradeIndex, 0, 2); // GRADE1からGRADE3まで
+
+        // 階級が変更された場合の処理
+        Boards.GetComponent<BoardSlideController>().SlideBoard((StageGrade)currentGradeIndex);
+
+        Debug.Log("Current Grade Index: " + currentGradeIndex);
+    }
+
+    // ステージインデックスの変更
+    private void ChangeStageIndex(int add)
+    {
+        currentStageIndex += add;
+        currentStageIndex = Mathf.Clamp(currentStageIndex, 0, 2); // 各階級に3つのステージ
+
+        // ステージが変更された場合の処理
+        Debug.Log("Current Stage Index: " + currentStageIndex);
+    }
+}

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Tilemaps;
 
 /// <summary>
 /// プレイヤーのコントローラ
@@ -11,7 +12,7 @@ public class PlayerController : MonoBehaviour
 {
     private GameTile m_gameTile;
     private TileMovement m_tileMovement;
-    
+    private KeyBox m_keyBox;
 
     private PlayerMovableTileSelector m_movableTileSelector; // 移動可能タイル選択器
 
@@ -30,6 +31,11 @@ public class PlayerController : MonoBehaviour
         if (!m_tileMovement)
         {
             Debug.LogError("m_tileMovementがnullです");
+        }
+        m_keyBox = gameObject?.GetComponent<KeyBox>();
+        if (!m_keyBox)
+        {
+            Debug.LogError("m_keyBoxがnullです");
         }
 
         m_movableTileSelector = new(m_gameTile);
@@ -69,11 +75,13 @@ public class PlayerController : MonoBehaviour
     {
         if (m_movableTileSelector.IsFoundTile(pressedKey))
         {
-            m_pushedKeys.Add(pressedKey);
             var directionID = m_movableTileSelector.GetDirection(pressedKey);
-            m_tileMovement.MoveTile(directionID);
-            m_moveDirections.Add(directionID);
-            FindCandidates();
+            if (TryMoveTile(directionID))
+            {
+                m_moveDirections.Add(directionID);
+                m_pushedKeys.Add(pressedKey);
+
+            }
         }
         Debug.Log("pressed" + pressedKey.ToString());
     }
@@ -89,8 +97,7 @@ public class PlayerController : MonoBehaviour
 
                 // タイルの移動処理
                 FindCandidates();
-                m_tileMovement.MoveTile(-TileDirectionData.GetMoveDirection(m_moveDirections[i]));
-
+                TryMoveTile(m_moveDirections[i], true);
                 // リストから削除（現在のインデックスを消す）
                 m_pushedKeys.RemoveAt(i);
                 m_moveDirections.RemoveAt(i);
@@ -102,9 +109,48 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-        FindCandidates();
 
         Debug.Log("released" + releasedKey.ToString());
+
+    }
+
+    /// <summary>
+    /// タイルを移動する
+    /// </summary>
+    /// <param name="directionID"></param>
+    /// <param name="reverseVector"></param>
+    bool TryMoveTile(TileDirectionData.Direction directionID, bool reverseVector = false)
+    {
+        // 移動地点にアイテムがあるか確認する
+        var toPosition = m_gameTile.CellPosition + TileDirectionData.GetMoveDirection(directionID, reverseVector);
+        var toGameObject = m_gameTile.Tilemap.GetInstantiatedObject(toPosition);
+
+        if (toGameObject && toGameObject.GetComponent<GameTileParent>() && toGameObject.GetComponent<GameTileParent>().GameTile)
+        {
+            if (toGameObject.GetComponent<GameTileParent>().GameTile.GetTileType() == GameTile.TileType.KEY)
+            {
+                m_keyBox.StoreKey();
+            }
+
+            if (toGameObject.GetComponent<GameTileParent>().GameTile.GetTileType() == GameTile.TileType.LOCKED_DOOR)
+            {
+                if (m_keyBox.KeyCount > 0)
+                {
+                    m_keyBox.RestoreKey();
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        // タイルの移動
+        m_tileMovement.MoveTile(directionID, reverseVector);
+
+        FindCandidates();
+
+        return true;
 
     }
 

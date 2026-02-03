@@ -1,9 +1,11 @@
 using UnityEngine;
 
-public class KeyBox : MonoBehaviour
+public class KeyBox 
+    : MonoBehaviour
 {
     [SerializeField]
     int m_keyCount; // Œ®‚Ì”
+
 
     public int KeyCount
     {
@@ -19,4 +21,5 @@ public class KeyBox : MonoBehaviour
     {
         m_keyCount--;
     }
+
 }

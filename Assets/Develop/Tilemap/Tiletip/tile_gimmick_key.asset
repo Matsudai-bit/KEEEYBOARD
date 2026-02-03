@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ui_keyTile_105
+  m_Name: tile_gimmick_key
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -1047179200, guid: bc3b3ef82dc54214585c245732e9bf21, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 627352ae77a8c4649abf94e3886fec3f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
@@ -31,6 +31,6 @@ MonoBehaviour:
     e31: 0
     e32: 0
     e33: 1
-  m_InstancedGameObject: {fileID: 453554157035960790, guid: 15c130b33b284d04188933511ff9cc29, type: 3}
+  m_InstancedGameObject: {fileID: 2094246450232754500, guid: 8d132c3e4272bed418d0ba8e9e4a3a14, type: 3}
   m_Flags: 1
   m_ColliderType: 1

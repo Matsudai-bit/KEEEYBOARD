@@ -1,11 +1,7 @@
-using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
-using static CommandSpriteData;
-using static UnityEditor.PlayerSettings;
 
 public class GameTileManager : MonoBehaviour
 {
@@ -33,15 +29,18 @@ public class GameTileManager : MonoBehaviour
         {
             m_gameTileDict.Add(keyCode, new());
         }
+
+        // タイルマップの座標を設定
+        InitializeTilemap(m_baseTilemap, m_gameTileDict, m_commandTiletipBaseName, m_usingKey, m_baseTilemap, m_topTilemap, m_commandSpriteData);
+
+        InitializeTilemap(m_topTilemap, m_gameTileDict, m_commandTiletipBaseName, m_usingKey, m_baseTilemap, m_topTilemap, m_commandSpriteData);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // タイルマップの座標を設定
-        InitializeTilemap(m_baseTilemap, m_gameTileDict, m_commandTiletipBaseName, m_usingKey, m_baseTilemap, m_topTilemap);
+        
 
-        InitializeTilemap(m_topTilemap, m_gameTileDict, m_commandTiletipBaseName, m_usingKey, m_baseTilemap, m_topTilemap);
 
     }
 
@@ -83,7 +82,7 @@ public class GameTileManager : MonoBehaviour
     }
 
     // 1つのメソッドで「座標セット」と「辞書登録」を同時に行う
-    static void InitializeTilemap( Tilemap tilemap, Dictionary<Key, List<GameTile>> dict, string baseName, UsingKeyData keys, Tilemap baseTilemap, Tilemap topTilemap)
+    static void InitializeTilemap( Tilemap tilemap, Dictionary<Key, List<GameTile>> dict, string baseName, UsingKeyData keys, Tilemap baseTilemap, Tilemap topTilemap, CommandSpriteData commandSpriteData)
     {
         foreach (Vector3Int pos in tilemap.cellBounds.allPositionsWithin)
         {
@@ -100,12 +99,14 @@ public class GameTileManager : MonoBehaviour
 
                 // ついでにコマンドタイルの判定もここで行う
                 TileBase asset = tilemap.GetTile(pos);
-                if (asset.name.Contains(baseName))
+                if (gameTile.GetTileType() == GameTile.TileType.COMMAND)
                 {
                     string keyName = asset.name.Replace(baseName, "");
                     Key code = keys.KeyCodes.Find(k => keyName == k.ToString());
 
-                    tileObj.AddComponent<CommandTile>().Key = code;
+                    var commandTile = tileObj.AddComponent<CommandTile>();
+                    commandTile.Key = code;
+                    commandTile.SpriteData = commandSpriteData;
                     if (dict.ContainsKey(code)) dict[code].Add(gameTile);
                 }
             }

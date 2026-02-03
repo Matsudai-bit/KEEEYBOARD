@@ -8,23 +8,18 @@ using static System.Runtime.CompilerServices.RuntimeHelpers;
 /// <summary>
 /// 使用するキーデータ
 /// </summary>
+[Serializable]
 [CreateAssetMenu(fileName = "CommandSpriteData", menuName = "ScriptableObjects/CommandSpriteData")]
 public class CommandSpriteData : ScriptableObject
 {
-    [Serializable]
-    public enum TileState
-    {
-        DEFAULT,    // 通常
-        VISITED,    // 通過済み
-        MOVABLE     // 移動候補
-    }
+
 
     [Serializable]
 
     public struct SpriteAndTileStatePair
     {
         public string label;
-        public TileState tileState;
+        public CommandTile.State tileState;
         public Sprite sprite;
     }
 
@@ -45,7 +40,7 @@ public class CommandSpriteData : ScriptableObject
     [SerializeField]
     private List<KeyAndSpritePair> m_keyAndSpritePair = new();
 
-    private Dictionary<Key, Dictionary<TileState, Sprite>> m_commandSpriteDict;
+    private Dictionary<Key, Dictionary<CommandTile.State, Sprite>> m_commandSpriteDict;
 
     public void Awake()
     {
@@ -57,7 +52,7 @@ public class CommandSpriteData : ScriptableObject
     public void InitializeDictionary()
     {
         // 辞書の初期化
-        m_commandSpriteDict = new Dictionary<Key, Dictionary<TileState, Sprite>>();
+        m_commandSpriteDict = new Dictionary<Key, Dictionary<CommandTile.State, Sprite>>();
 
         if (m_keyAndSpritePair == null) return;
 
@@ -67,7 +62,7 @@ public class CommandSpriteData : ScriptableObject
             if (keyPair.key == Key.None) continue;
 
             // そのキー用の「状態→画像」の辞書を作成
-            var stateDict = new Dictionary<TileState, Sprite>();
+            var stateDict = new Dictionary<CommandTile.State, Sprite>();
 
             foreach (var spritePair in keyPair.spritePair)
             {
@@ -91,7 +86,7 @@ public class CommandSpriteData : ScriptableObject
     /// <summary>
     /// 外部から「キー」と「状態」を指定してスプライトを取り出す関数
     /// </summary>
-    public Sprite GetSprite(Key key, TileState state)
+    public Sprite GetSprite(Key key, CommandTile.State state)
     {
         if (m_commandSpriteDict == null) InitializeDictionary();
 
@@ -119,7 +114,7 @@ public class CommandSpriteData : ScriptableObject
         // 現在のリストをクリア（上書きしたくない場合は調整が必要）
         m_keyAndSpritePair.Clear();
 
-        var states = (TileState[])Enum.GetValues(typeof(TileState));
+        var states = (CommandTile.State[])Enum.GetValues(typeof(CommandTile.State));
 
         int spriteNum = states.Length * m_usingKeyData.KeyCodes.Count;
         for (int x = 0; x < m_usingKeyData.KeyCodes.Count; x++)

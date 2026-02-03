@@ -47,39 +47,5 @@ public class InputTest : MonoBehaviour
     {
       
 
-        var keyboard = Keyboard.current;
-        if (keyboard == null) return;
-
-        // 現在押されているすべてのキーをチェック
-        foreach (var key in keyboard.allKeys)
-        {
-            if (key.wasPressedThisFrame && key.isPressed)
-            {
-                // System.Array.Exists や LINQ を使うとループを二重に書かなくて済みます
-                if (m_usingKey.KeyCodes.Exists( k => k == key.keyCode))
-                {
-                    if (key.keyCode == Key.A)
-                    {
-                        // m_Aobject が配列やリストの場合
-                        for (int i = 0; i < m_Aobject.Count; i++)
-                        {
-                            // 1. 辞書からスプライトを取得
-                            Sprite newSprite = m_commandSpriteData.GetSprite(key.keyCode, CommandSpriteData.TileState.MOVABLE);
-                            if (newSprite == null) return;
-
-                            // 2. 新しいタイルインスタンスを作成（または既存のタイルをコピー）
-                            Tile newTile = ScriptableObject.CreateInstance<Tile>();
-                            newTile.sprite = newSprite;
-
-                            // 3. 指定した座標のタイルを差し替える
-                            m_tilemap.SetTile(m_Aobject[i], newTile);
-
-                        }
-                    }
-                    
-                    Debug.Log($"当たり！押されたキー: {key.name}");
-                }
-            }
-        }
     }
 }

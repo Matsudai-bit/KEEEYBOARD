@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: GameSoundData
   m_EditorClassIdentifier: 
   soundData:
-  - labelName: BGM_RESULT
+  - labelName: SE_INGAME_TIMER_TICK
     id: 13
     clip: {fileID: 8300000, guid: 5b817dbae2d916849ac788fbeb94d87f, type: 3}
-  - labelName: SE_TITLE_START_BUTTON
+  - labelName: SE_INGAME_TIMEER_WARNING
     id: 14
     clip: {fileID: 8300000, guid: 17cf8facd93d7a4429714c29bd549013, type: 3}
   - labelName: BGM_RANK_1

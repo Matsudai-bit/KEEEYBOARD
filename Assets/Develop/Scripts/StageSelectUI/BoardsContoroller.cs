@@ -24,6 +24,8 @@ public class BoardsController : MonoBehaviour
 
         float targetPosX = startAnchoredPosition.x + (-1920.0f * (int)currentGrade);
 
+        contentsController.HideContents();
+
         rectTransform.DOAnchorPosX(targetPosX, 0.5f)
            .SetEase(Ease.InOutSine)
            .OnComplete(() =>

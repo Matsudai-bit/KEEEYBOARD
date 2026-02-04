@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      G1_3_GimmickScreen_0: -226582960769820563
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

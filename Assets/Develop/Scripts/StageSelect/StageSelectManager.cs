@@ -16,6 +16,13 @@ public class StageSelectManager : MonoBehaviour
         GRADE3,
     }
 
+    public enum StageNumber
+    {
+        STAGE_1,
+        STAGE_2,
+        STAGE_3,
+    }
+
     // ステージを示す列挙
     public enum StageID
     {
@@ -134,7 +141,7 @@ public class StageSelectManager : MonoBehaviour
         currentGradeIndex = Mathf.Clamp(currentGradeIndex, 0, 2); // GRADE1からGRADE3まで
 
         // 階級が変更された場合の処理
-        Boards.GetComponent<BoardSlideController>().SlideBoard((StageGrade)currentGradeIndex);
+        Boards.GetComponent<BoardsController>().SlideBoard((StageGrade)currentGradeIndex);
 
         Debug.Log("Current Grade Index: " + currentGradeIndex);
     }

@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd6f8bd163720f4408a1e51044488885, type: 3}
+  m_Name: KeyboardGuideSpriteData
+  m_EditorClassIdentifier: 
+  guideSprites:
+  - {fileID: 21300000, guid: 883b4f33bfa73f44d9b4b39f846b90d7, type: 3}
+  - {fileID: 21300000, guid: 9be58ccdc96396a4499e494cfbf650d4, type: 3}
+  - {fileID: 21300000, guid: a82eccd095b120147b20c5ccfe2e4242, type: 3}
+  - {fileID: 21300000, guid: f5a9952881cc0c04b8be31eebcfdc855, type: 3}
+  - {fileID: 21300000, guid: e952fc5dd63449f4b91bd7dbc92e3ba9, type: 3}
+  - {fileID: 21300000, guid: a22aad60654225a429c67a069f4c55dd, type: 3}
+  - {fileID: 21300000, guid: a5b0ad1161582b14c97ad93879ecb274, type: 3}
+  - {fileID: 21300000, guid: 3cfdb8d779e7a28429483cdff58c9907, type: 3}
+  - {fileID: 21300000, guid: f0c77a49635dfe542b06247e0494dbe0, type: 3}
+  - {fileID: 21300000, guid: 8dbf7529a6a337e4b833c818bf54c3ea, type: 3}
+  - {fileID: 21300000, guid: 5c7b80f7f15ffb840bad3e1138cd2cab, type: 3}
+  - {fileID: 21300000, guid: e0186bf8eb105e34fbe2e2c07419af28, type: 3}
+  - {fileID: 21300000, guid: 09e15a3117e91c34299f92749f342581, type: 3}
+  - {fileID: 21300000, guid: 2a50d31962bc41a44afef2898e283022, type: 3}
+  - {fileID: 21300000, guid: ed9c984adda7b3141a87507baa48327a, type: 3}
+  - {fileID: 21300000, guid: e60b195fd7214ac4d830e7b864d3e355, type: 3}
+  - {fileID: 21300000, guid: 67e8e6184853f054f81cc21678cbbbf1, type: 3}
+  - {fileID: 21300000, guid: 9ad16089d77d14e4c9ddbaadde4ea7cf, type: 3}
+  - {fileID: 21300000, guid: 4bc047e6beb24ea4ba7623783a1d21ce, type: 3}
+  - {fileID: 21300000, guid: 51ca302a7b034a44e859d654970d920e, type: 3}
+  - {fileID: 21300000, guid: 8ada5d74410f07c40a03c25ab35fe49d, type: 3}
+  - {fileID: 21300000, guid: 7922fdc9fc2155c42b0c8f20241d6be6, type: 3}
+  - {fileID: 21300000, guid: bc005a1816e899a4983b7d377be35cd1, type: 3}
+  - {fileID: 21300000, guid: ff351d3317f3b5740b36bbaa4eecbf57, type: 3}
+  - {fileID: 21300000, guid: 4dae6b879c7b1424f9e883d8a95dc1df, type: 3}
+  - {fileID: 21300000, guid: d7fd8a680d5289c469b751407d0b52db, type: 3}
+  - {fileID: 21300000, guid: b073d66158d1d5b4293496baf36b97e6, type: 3}
+  m_usingKeyData: {fileID: 11400000, guid: 6954470ecbedbd04c999d858e5a95c53, type: 2}
+  m_keyAndSpritePair:
+  - keyName: A
+    key: 15
+    sprite: {fileID: 21300000, guid: 883b4f33bfa73f44d9b4b39f846b90d7, type: 3}
+  - keyName: B
+    key: 16
+    sprite: {fileID: 21300000, guid: 9be58ccdc96396a4499e494cfbf650d4, type: 3}
+  - keyName: C
+    key: 17
+    sprite: {fileID: 21300000, guid: a82eccd095b120147b20c5ccfe2e4242, type: 3}
+  - keyName: D
+    key: 18
+    sprite: {fileID: 21300000, guid: f5a9952881cc0c04b8be31eebcfdc855, type: 3}
+  - keyName: E
+    key: 19
+    sprite: {fileID: 21300000, guid: e952fc5dd63449f4b91bd7dbc92e3ba9, type: 3}
+  - keyName: F
+    key: 20
+    sprite: {fileID: 21300000, guid: a22aad60654225a429c67a069f4c55dd, type: 3}
+  - keyName: G
+    key: 21
+    sprite: {fileID: 21300000, guid: a5b0ad1161582b14c97ad93879ecb274, type: 3}
+  - keyName: H
+    key: 22
+    sprite: {fileID: 21300000, guid: 3cfdb8d779e7a28429483cdff58c9907, type: 3}
+  - keyName: I
+    key: 23
+    sprite: {fileID: 21300000, guid: f0c77a49635dfe542b06247e0494dbe0, type: 3}
+  - keyName: J
+    key: 24
+    sprite: {fileID: 21300000, guid: 8dbf7529a6a337e4b833c818bf54c3ea, type: 3}
+  - keyName: K
+    key: 25
+    sprite: {fileID: 21300000, guid: 5c7b80f7f15ffb840bad3e1138cd2cab, type: 3}
+  - keyName: L
+    key: 26
+    sprite: {fileID: 21300000, guid: e0186bf8eb105e34fbe2e2c07419af28, type: 3}
+  - keyName: M
+    key: 27
+    sprite: {fileID: 21300000, guid: 09e15a3117e91c34299f92749f342581, type: 3}
+  - keyName: N
+    key: 28
+    sprite: {fileID: 21300000, guid: 2a50d31962bc41a44afef2898e283022, type: 3}
+  - keyName: O
+    key: 29
+    sprite: {fileID: 21300000, guid: ed9c984adda7b3141a87507baa48327a, type: 3}
+  - keyName: P
+    key: 30
+    sprite: {fileID: 21300000, guid: e60b195fd7214ac4d830e7b864d3e355, type: 3}
+  - keyName: Q
+    key: 31
+    sprite: {fileID: 21300000, guid: 67e8e6184853f054f81cc21678cbbbf1, type: 3}
+  - keyName: R
+    key: 32
+    sprite: {fileID: 21300000, guid: 9ad16089d77d14e4c9ddbaadde4ea7cf, type: 3}
+  - keyName: S
+    key: 33
+    sprite: {fileID: 21300000, guid: 4bc047e6beb24ea4ba7623783a1d21ce, type: 3}
+  - keyName: T
+    key: 34
+    sprite: {fileID: 21300000, guid: 51ca302a7b034a44e859d654970d920e, type: 3}
+  - keyName: U
+    key: 35
+    sprite: {fileID: 21300000, guid: 8ada5d74410f07c40a03c25ab35fe49d, type: 3}
+  - keyName: V
+    key: 36
+    sprite: {fileID: 21300000, guid: 7922fdc9fc2155c42b0c8f20241d6be6, type: 3}
+  - keyName: W
+    key: 37
+    sprite: {fileID: 21300000, guid: bc005a1816e899a4983b7d377be35cd1, type: 3}
+  - keyName: X
+    key: 38
+    sprite: {fileID: 21300000, guid: ff351d3317f3b5740b36bbaa4eecbf57, type: 3}
+  - keyName: Y
+    key: 39
+    sprite: {fileID: 21300000, guid: 4dae6b879c7b1424f9e883d8a95dc1df, type: 3}
+  - keyName: Z
+    key: 40
+    sprite: {fileID: 21300000, guid: d7fd8a680d5289c469b751407d0b52db, type: 3}
+  - keyName: Space
+    key: 1
+    sprite: {fileID: 21300000, guid: b073d66158d1d5b4293496baf36b97e6, type: 3}

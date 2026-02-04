@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundData:
   - labelName: SE_INGAME_TIMER_TICK
-    id: 5
+    id: 13
     clip: {fileID: 8300000, guid: 5b817dbae2d916849ac788fbeb94d87f, type: 3}
   - labelName: SE_INGAME_TIMEER_WARNING
-    id: 6
+    id: 14
     clip: {fileID: 8300000, guid: 17cf8facd93d7a4429714c29bd549013, type: 3}
   - labelName: BGM_RANK_1
     id: 2
@@ -25,9 +25,6 @@ MonoBehaviour:
   - labelName: BGM_RANK_2
     id: 3
     clip: {fileID: 8300000, guid: 39f83b6f44fdced4dbbd3de72801f2af, type: 3}
-  - labelName: BGM_RANK_3
-    id: 4
-    clip: {fileID: 8300000, guid: 3a60084f48a2b3a44a5bcbf8293a0bfd, type: 3}
   - labelName: BGM_RANK_3
     id: 4
     clip: {fileID: 8300000, guid: 3a60084f48a2b3a44a5bcbf8293a0bfd, type: 3}

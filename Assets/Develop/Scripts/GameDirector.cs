@@ -8,12 +8,15 @@ public class GameDirector
     void Awake()
     {
         PlayerEventMessenger.GetInstance.RegisterObserver(this);
-
+        SoundManager.GetInstance.PlayBGM(SoundID.BGM_RANK_1);
     }
 
     void OnDestroy()
     {
         PlayerEventMessenger.GetInstance.RemoveObserver(this);
+        SoundManager.GetInstance.RequestAllStopping(true);
+            ;
+
     }
 
 

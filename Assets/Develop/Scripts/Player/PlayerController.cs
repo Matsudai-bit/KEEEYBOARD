@@ -154,6 +154,8 @@ public class PlayerController : MonoBehaviour
             if (toGameObject.GetComponent<GameTileParent>().GameTile.GetTileType() == GameTile.TileType.KEY)
             {
                 m_keyBox.StoreKey();
+                PlayerEventMessenger.GetInstance.Notify(PlayerEventID.GET_KEY, m_gameTile);
+
             }
 
             if (toGameObject.GetComponent<GameTileParent>().GameTile.GetTileType() == GameTile.TileType.LOCKED_DOOR)

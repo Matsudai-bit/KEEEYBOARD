@@ -52,7 +52,9 @@ public class ContentsController : MonoBehaviour
             info.SetPosition(copyYes);
             contentsList[i] = info; // ここでリスト内の「本物」が更新されます
 
+            // 4. 最初は非表示にしておく
             contentsList[i].contentObject.SetActive(false);
+            contentsList[i].contentObject.transform.GetChild(1).gameObject.SetActive(false);
         }
     }
 
@@ -64,6 +66,7 @@ public class ContentsController : MonoBehaviour
             if (contentsList[i].grade == grade)
             {
                 contentsList[i].contentObject.SetActive(true);
+
             }
             else
             {
@@ -90,6 +93,41 @@ public class ContentsController : MonoBehaviour
                 //    .SetDelay((int)contentsList[i].number * 0.125f);
             }
         }
+    }
+
+
+    public void HideContents()
+    {
+        for (int i = 0; i < contentsList.Count; i++)
+        {
+            contentsList[i].contentObject.transform.DOScale(Vector3.zero, 0.125f)
+                .SetEase(Ease.InSine)
+                .SetDelay((int)contentsList[i].number * 0.125f)
+                .OnComplete(() =>
+                {
+                    contentsList[i].contentObject.SetActive(false);
+                })
+                .SetLink(gameObject);
+        }
+    }
+
+
+    public void ViewOutLine(StageSelectManager.StageID stageID)
+    {
+        for(int i = 0; i < contentsList.Count; i++)
+        {
+            // ステージIDを計算
+            int id = (int)contentsList[i].grade * 3 + (int)contentsList[i].number;
+            if ((int)stageID == id)
+            {
+                contentsList[i].contentObject.transform.GetChild(1).gameObject.SetActive(true);
+            }
+            else
+            {
+                contentsList[i].contentObject.transform.GetChild(1).gameObject.SetActive(false);
+            }
+        }
+
     }
 
 }

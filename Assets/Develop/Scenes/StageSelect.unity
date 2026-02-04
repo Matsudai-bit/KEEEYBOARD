@@ -158,7 +158,7 @@ Transform:
   m_GameObject: {fileID: 10414897}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -86.37265, y: -6.916443, z: 0.23249844}
+  m_LocalPosition: {x: -86.37266, y: -6.916449, z: 0.23249845}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -171,7 +171,7 @@ Transform:
   - {fileID: 1375228687}
   - {fileID: 2121821591}
   - {fileID: 2007868695}
-  m_Father: {fileID: 1399364827}
+  m_Father: {fileID: 268659179}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &10414900
 MonoBehaviour:
@@ -189,39 +189,39 @@ MonoBehaviour:
   - contentObject: {fileID: 390463339}
     grade: 0
     number: 0
-    startPinPosition: {x: 0, y: 0}
+    initialPinPos: {x: 0, y: 0}
   - contentObject: {fileID: 545903038}
     grade: 0
     number: 1
-    startPinPosition: {x: 0, y: 0}
+    initialPinPos: {x: 0, y: 0}
   - contentObject: {fileID: 2102394577}
     grade: 0
     number: 2
-    startPinPosition: {x: 0, y: 0}
+    initialPinPos: {x: 0, y: 0}
   - contentObject: {fileID: 1567963210}
     grade: 1
-    number: 2
-    startPinPosition: {x: 0, y: 0}
+    number: 0
+    initialPinPos: {x: 0, y: 0}
   - contentObject: {fileID: 115057723}
     grade: 1
-    number: 2
-    startPinPosition: {x: 0, y: 0}
+    number: 1
+    initialPinPos: {x: 0, y: 0}
   - contentObject: {fileID: 46498386}
     grade: 1
     number: 2
-    startPinPosition: {x: 0, y: 0}
+    initialPinPos: {x: 0, y: 0}
   - contentObject: {fileID: 1375228686}
     grade: 2
     number: 0
-    startPinPosition: {x: 0, y: 0}
+    initialPinPos: {x: 0, y: 0}
   - contentObject: {fileID: 2121821590}
     grade: 2
     number: 1
-    startPinPosition: {x: 0, y: 0}
+    initialPinPos: {x: 0, y: 0}
   - contentObject: {fileID: 2007868692}
     grade: 2
     number: 2
-    startPinPosition: {x: 0, y: 0}
+    initialPinPos: {x: 0, y: 0}
 --- !u!1 &19513606
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,6 +267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Boards: {fileID: 268659181}
+  contentsController: {fileID: 10414900}
 --- !u!1 &46498386 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1172779058636038548, guid: ca72fd5d5d7cd3c4088f38773e2fa4ac, type: 3}
@@ -361,7 +362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6582031941718634084, guid: ca72fd5d5d7cd3c4088f38773e2fa4ac, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -50
+      value: 1850
       objectReference: {fileID: 0}
     - target: {fileID: 6582031941718634084, guid: ca72fd5d5d7cd3c4088f38773e2fa4ac, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -417,6 +418,7 @@ RectTransform:
   - {fileID: 3833463099890199784}
   - {fileID: 1001216156}
   - {fileID: 509137933}
+  - {fileID: 10414899}
   m_Father: {fileID: 1399364827}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -523,7 +525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6582031941718634084, guid: ca72fd5d5d7cd3c4088f38773e2fa4ac, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 64
+      value: 3927.0005
       objectReference: {fileID: 0}
     - target: {fileID: 6582031941718634084, guid: ca72fd5d5d7cd3c4088f38773e2fa4ac, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -741,7 +743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6582031941718634084, guid: ca72fd5d5d7cd3c4088f38773e2fa4ac, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 163
+      value: 2063
       objectReference: {fileID: 0}
     - target: {fileID: 6582031941718634084, guid: ca72fd5d5d7cd3c4088f38773e2fa4ac, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1016,7 +1018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e26d8c4c5fc90049b6ae0663b6e9163, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contentsController: {fileID: 0}
+  contentsController: {fileID: 10414900}
 --- !u!114 &509137935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1139,7 +1141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6582031941718634084, guid: ca72fd5d5d7cd3c4088f38773e2fa4ac, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -178
+      value: 1722
       objectReference: {fileID: 0}
     - target: {fileID: 6582031941718634084, guid: ca72fd5d5d7cd3c4088f38773e2fa4ac, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1260,7 +1262,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6582031941718634084, guid: ca72fd5d5d7cd3c4088f38773e2fa4ac, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 54
+      value: 3917
       objectReference: {fileID: 0}
     - target: {fileID: 6582031941718634084, guid: ca72fd5d5d7cd3c4088f38773e2fa4ac, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1307,6 +1309,42 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca72fd5d5d7cd3c4088f38773e2fa4ac, type: 3}
+--- !u!1 &692156876
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 692156877}
+  m_Layer: 5
+  m_Name: StageSlide
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &692156877
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692156876}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1654879718}
+  m_Father: {fileID: 1399364827}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1001216155
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,7 +1396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e26d8c4c5fc90049b6ae0663b6e9163, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contentsController: {fileID: 0}
+  contentsController: {fileID: 10414900}
 --- !u!114 &1001216158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1732,9 +1770,8 @@ RectTransform:
   m_Children:
   - {fileID: 1609552114}
   - {fileID: 1975173955}
-  - {fileID: 1654879718}
   - {fileID: 268659179}
-  - {fileID: 10414899}
+  - {fileID: 692156877}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1839,7 +1876,7 @@ GameObject:
   - component: {fileID: 1654879720}
   - component: {fileID: 1654879719}
   m_Layer: 5
-  m_Name: File
+  m_Name: Slide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1852,12 +1889,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1654879717}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1399364827}
+  m_Father: {fileID: 692156877}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2097,7 +2134,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6582031941718634084, guid: ca72fd5d5d7cd3c4088f38773e2fa4ac, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -193.1
+      value: 3669.9004
       objectReference: {fileID: 0}
     - target: {fileID: 6582031941718634084, guid: ca72fd5d5d7cd3c4088f38773e2fa4ac, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2429,7 +2466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e26d8c4c5fc90049b6ae0663b6e9163, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contentsController: {fileID: 0}
+  contentsController: {fileID: 10414900}
 --- !u!114 &9144072962136464479
 MonoBehaviour:
   m_ObjectHideFlags: 0

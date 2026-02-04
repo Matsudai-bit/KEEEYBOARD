@@ -6,6 +6,8 @@ public class StageSelectManager : MonoBehaviour
     [Header("UI References")]
     [SerializeField]
     private UnityEngine.CanvasGroup Boards;
+    [SerializeField]
+    ContentsController contentsController;
 
 
     // 階級を示す列挙
@@ -95,7 +97,8 @@ public class StageSelectManager : MonoBehaviour
         {
             // ステージ選択へ移行
             currentState = SelectionState.STAGE_SELECTION;
-            Debug.Log("Switched to Stage Selection");
+            StageID stageID = (StageID)(currentGradeIndex * 3 + currentStageIndex);
+            contentsController.ViewOutLine(stageID);
         }
 
     }
@@ -143,7 +146,6 @@ public class StageSelectManager : MonoBehaviour
         // 階級が変更された場合の処理
         Boards.GetComponent<BoardsController>().SlideBoard((StageGrade)currentGradeIndex);
 
-        Debug.Log("Current Grade Index: " + currentGradeIndex);
     }
 
     // ステージインデックスの変更
@@ -153,6 +155,9 @@ public class StageSelectManager : MonoBehaviour
         currentStageIndex = Mathf.Clamp(currentStageIndex, 0, 2); // 各階級に3つのステージ
 
         // ステージが変更された場合の処理
-        Debug.Log("Current Stage Index: " + currentStageIndex);
+        // ステージIDを計算
+        StageID stageID = (StageID)(currentGradeIndex * 3 + currentStageIndex);
+        contentsController.ViewOutLine(stageID);
+
     }
 }

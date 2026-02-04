@@ -13,11 +13,11 @@ public class ContentsController : MonoBehaviour
         public GameObject contentObject; // コンテンツのGameObject
         public StageSelectManager.StageGrade grade; // コンテンツの位置する階級
         public StageSelectManager.StageNumber number; // コンテンツの位置するステージ
-        public Vector2 initialPinPos; // ピンのRectTransform
+        public Vector2 pinInitialPos; // ピンのRectTransform
 
         public void SetPosition(Vector2 pos)
         {
-            initialPinPos = pos;
+            pinInitialPos = pos;
         }
     }
 
@@ -52,7 +52,9 @@ public class ContentsController : MonoBehaviour
             info.SetPosition(copyYes);
             contentsList[i] = info; // ここでリスト内の「本物」が更新されます
 
-            contentsList[i].contentObject.SetActive(false);
+            // 4. 最初は非表示にしておく
+            //contentsList[i].contentObject.SetActive(false);
+            contentsList[i].contentObject.transform.GetChild(1).gameObject.SetActive(false);
         }
     }
 
@@ -64,6 +66,7 @@ public class ContentsController : MonoBehaviour
             if (contentsList[i].grade == grade)
             {
                 contentsList[i].contentObject.SetActive(true);
+
             }
             else
             {
@@ -83,12 +86,64 @@ public class ContentsController : MonoBehaviour
             Image pinImage = contentsList[i].contentObject.transform.GetChild(0).GetComponent<Image>();
             if (pinImage != null)
             {
-                //pinImage.transform.position = new Vector3(pinImage.transform.position.x, pinImage.transform.position.y + 100.0f, pinImage.transform.position.z);
-                pinImage.GetComponent<RectTransform>().anchoredPosition = contentsList[i].initialPinPos;
-                //pinImage.GetComponent<RectTransform>().DOAnchorPos(contentsList[i].initialPinPos, 0.25f)
-                //    .SetEase(Ease.InOutSine)
-                //    .SetDelay((int)contentsList[i].number * 0.125f);
+                // RectTransformを取得
+                RectTransform pinRect = pinImage.GetComponent<RectTransform>();
+
+                // 既存のアニメーションがあれば停止
+                pinRect.DOKill();
+
+                // アニメーションの「開始位置」へ移動
+                Vector2 startOffset = new Vector2(0f, 50f);
+                pinRect.anchoredPosition = contentsList[i].pinInitialPos + startOffset;
+
+                // 本来の位置(pinInitialPos)へ向かって移動
+                pinRect.DOAnchorPos(contentsList[i].pinInitialPos, 0.5f)
+                    .SetEase(Ease.OutBack)
+                    .SetDelay((int)contentsList[i].number * 0.125f)
+                    .SetLink(pinImage.gameObject);
             }
+        }
+    }
+
+
+    public void HideContents()
+    {
+        for (int i = 0; i < contentsList.Count; i++)
+        {
+            contentsList[i].contentObject.transform.DOScale(Vector3.zero, 0.125f)
+                .SetEase(Ease.InSine)
+                .SetDelay((int)contentsList[i].number * 0.125f)
+                .OnComplete(() =>
+                {
+                    contentsList[i].contentObject.SetActive(false);
+                })
+                .SetLink(gameObject);
+        }
+    }
+
+
+    public void ViewOutLine(StageSelectManager.StageID stageID)
+    {
+        for(int i = 0; i < contentsList.Count; i++)
+        {
+            // ステージIDを計算
+            int id = (int)contentsList[i].grade * 3 + (int)contentsList[i].number;
+            if ((int)stageID == id)
+            {
+                contentsList[i].contentObject.transform.GetChild(1).gameObject.SetActive(true);
+            }
+            else
+            {
+                contentsList[i].contentObject.transform.GetChild(1).gameObject.SetActive(false);
+            }
+        }
+    }
+
+    public void HideOutLine()
+    {
+        for (int i = 0; i < contentsList.Count; i++)
+        {
+            contentsList[i].contentObject.transform.GetChild(1).gameObject.SetActive(false);
         }
     }
 

@@ -6,6 +6,10 @@ public class StageSelectManager : MonoBehaviour
     [Header("UI References")]
     [SerializeField]
     private UnityEngine.CanvasGroup Boards;
+    [SerializeField]
+    ContentsController contentsController;
+    [SerializeField]
+    StageSlideController stageSlideController;
 
 
     // 階級を示す列挙
@@ -84,10 +88,12 @@ public class StageSelectManager : MonoBehaviour
         // 入力に応じてcurrentGradeIndexを更新(左右キー)
         if(Input.GetKeyDown(KeyCode.RightArrow))
         {
+            if (currentGradeIndex == 2) return; // 3つ目の階級以上には進めない
             ChangeGradeIndex(1);
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            if (currentGradeIndex == 0) return; // 1つ目の階級以下には戻れない
             ChangeGradeIndex(-1);
         }
 
@@ -95,7 +101,9 @@ public class StageSelectManager : MonoBehaviour
         {
             // ステージ選択へ移行
             currentState = SelectionState.STAGE_SELECTION;
-            Debug.Log("Switched to Stage Selection");
+            StageID stageID = (StageID)(currentGradeIndex * 3 + currentStageIndex);
+            contentsController.ViewOutLine(stageID);
+            stageSlideController.SlideIn((StageGrade)currentGradeIndex, (StageNumber)currentStageIndex);
         }
 
     }
@@ -107,11 +115,15 @@ public class StageSelectManager : MonoBehaviour
         // 入力に応じてcurrentStageIndexを更新(左右キー)
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
+            if(currentStageIndex == 2) return; // 3つ目のステージ以上には進めない
             ChangeStageIndex(1);
+            stageSlideController.SlideIn((StageGrade)currentGradeIndex, (StageNumber)currentStageIndex);
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            if (currentStageIndex == 0) return; // 1つ目のステージ以下には戻れない
             ChangeStageIndex(-1);
+            stageSlideController.SlideIn((StageGrade)currentGradeIndex, (StageNumber)currentStageIndex);
         }
 
         if (Input.GetKeyDown(KeyCode.Backspace))
@@ -120,7 +132,8 @@ public class StageSelectManager : MonoBehaviour
             currentState = SelectionState.GRADE_SELECTION;
             // ステージインデックスをリセット
             currentStageIndex = 0;
-            Debug.Log("Switched to Grade Selection");
+            contentsController.HideOutLine();
+            stageSlideController.SlideOut();
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -143,7 +156,6 @@ public class StageSelectManager : MonoBehaviour
         // 階級が変更された場合の処理
         Boards.GetComponent<BoardsController>().SlideBoard((StageGrade)currentGradeIndex);
 
-        Debug.Log("Current Grade Index: " + currentGradeIndex);
     }
 
     // ステージインデックスの変更
@@ -153,6 +165,9 @@ public class StageSelectManager : MonoBehaviour
         currentStageIndex = Mathf.Clamp(currentStageIndex, 0, 2); // 各階級に3つのステージ
 
         // ステージが変更された場合の処理
-        Debug.Log("Current Stage Index: " + currentStageIndex);
+        // ステージIDを計算
+        StageID stageID = (StageID)(currentGradeIndex * 3 + currentStageIndex);
+        contentsController.ViewOutLine(stageID);
+
     }
 }

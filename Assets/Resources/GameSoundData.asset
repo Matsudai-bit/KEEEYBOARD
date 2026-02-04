@@ -15,7 +15,7 @@ MonoBehaviour:
   soundData:
   - labelName: SE_INGAME_TIMER_TICK
     id: 13
-    clip: {fileID: 8300000, guid: 5b817dbae2d916849ac788fbeb94d87f, type: 3}
+    clip: {fileID: 8300000, guid: fd953c1390a6e8945b46112ecaf0b522, type: 3}
   - labelName: SE_INGAME_TIMEER_WARNING
     id: 14
     clip: {fileID: 8300000, guid: 17cf8facd93d7a4429714c29bd549013, type: 3}
@@ -27,4 +27,19 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 39f83b6f44fdced4dbbd3de72801f2af, type: 3}
   - labelName: BGM_RANK_3
     id: 4
-    clip: {fileID: 8300000, guid: 3a60084f48a2b3a44a5bcbf8293a0bfd, type: 3}
+    clip: {fileID: 8300000, guid: 05470da769f5d3545bcf840758e371a2, type: 3}
+  - labelName: SE_INGAME_PLAYER_MOVE
+    id: 15
+    clip: {fileID: 8300000, guid: ac8c5088b92c4644cb67b822fe05a22e, type: 3}
+  - labelName: SE_INGAME_PLAYER_GET_KEY
+    id: 18
+    clip: {fileID: 8300000, guid: 4b1c9400e57b69b42a2b3c96a42262d7, type: 3}
+  - labelName: SE_INGAME_PLAYER_UNLOCK
+    id: 19
+    clip: {fileID: 8300000, guid: 8a59fa49069bae64fba92ec76046aea1, type: 3}
+  - labelName: SE_INGAME_PLAYER_NOT_VISIT
+    id: 20
+    clip: {fileID: 8300000, guid: 341de862b11580447921c6dcfb4dcd1d, type: 3}
+  - labelName: SE_INGAME_PLAYER_VISIT_SAFETILE
+    id: 21
+    clip: {fileID: 8300000, guid: 7433050438c02b648b2088c81c7c900d, type: 3}

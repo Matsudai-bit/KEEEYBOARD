@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "G1_\uFF13_SettingIcon_0": -1611341766353609512
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

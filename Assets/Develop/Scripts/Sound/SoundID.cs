@@ -40,6 +40,9 @@ public enum SoundID
     SE_INGAME_PLAYER_MISS_PRESSED,  // プレイヤーミス押下音
     SE_INGAME_PLAYER_MISS_RELEASE,  // プレイヤーミス解放音
     SE_INGAME_PLAYER_GET_KEY,       // プレイヤー鍵取得音
+    SE_INGAME_PLAYER_UNLOCK,       // プレイヤー解除
+    SE_INGAME_PLAYER_NOT_VISIT,       // プレイヤー行くことができないタイルの時の音
+    SE_INGAME_PLAYER_VISIT_SAFETILE,       // プレイヤー行くことができないタイルの時の音
 
     SE_INGAME_GIMMICK_WALL_ATTACK,     // ギミック壁当たり音
     SE_INGAME_GIMMICK_ENEMY_HIT,        // ギミック敵ヒット音

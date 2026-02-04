@@ -14,7 +14,6 @@ public class GameDirector
     void OnDestroy()
     {
         PlayerEventMessenger.GetInstance.RemoveObserver(this);
-        SoundManager.GetInstance.RequestAllStopping(true);
             ;
 
     }
@@ -29,6 +28,10 @@ public class GameDirector
         {
             case PlayerEventID.UNLOCK:
                 UnlockDoor();
+                SoundManager.GetInstance.RequestPlaying(SoundID.SE_INGAME_PLAYER_UNLOCK);
+                break;
+            case PlayerEventID.GET_KEY:
+                SoundManager.GetInstance.RequestPlaying(SoundID.SE_INGAME_PLAYER_GET_KEY);
                 break;
         }
     }

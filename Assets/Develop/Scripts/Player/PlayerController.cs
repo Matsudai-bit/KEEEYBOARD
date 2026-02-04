@@ -91,8 +91,10 @@ public class PlayerController : MonoBehaviour
                 m_visitedTileData.Add(new VisitedTileData(visitedTile, directionID));
 
                 VisitTile(m_gameTile.CellPosition);
+                SoundManager.GetInstance.RequestPlaying(SoundID.SE_INGAME_PLAYER_MOVE);
                 if (visitedTile.GameTile.GetTileType() == GameTile.TileType.SAFE)
                 {
+
                     StayTile();
                 }
             }
@@ -167,6 +169,7 @@ public class PlayerController : MonoBehaviour
                 }
                 else
                 {
+                    SoundManager.GetInstance.RequestPlaying(SoundID.SE_INGAME_PLAYER_NOT_VISIT);
                     return false;
                 }
             }
@@ -234,6 +237,8 @@ public class PlayerController : MonoBehaviour
 
     void StayTile()
     {
+        SoundManager.GetInstance.RequestPlaying(SoundID.SE_INGAME_PLAYER_VISIT_SAFETILE);
+
         foreach (var visitedTile in m_visitedTileData)
         {
             visitedTile.commandTile.SetState(CommandTile.State.DEFAULT);

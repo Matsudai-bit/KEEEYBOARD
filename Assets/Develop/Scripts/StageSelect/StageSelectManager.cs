@@ -8,6 +8,8 @@ public class StageSelectManager : MonoBehaviour
     private UnityEngine.CanvasGroup Boards;
     [SerializeField]
     ContentsController contentsController;
+    [SerializeField]
+    StageSlideController stageSlideController;
 
 
     // 階級を示す列挙
@@ -86,10 +88,12 @@ public class StageSelectManager : MonoBehaviour
         // 入力に応じてcurrentGradeIndexを更新(左右キー)
         if(Input.GetKeyDown(KeyCode.RightArrow))
         {
+            if (currentGradeIndex == 2) return; // 3つ目の階級以上には進めない
             ChangeGradeIndex(1);
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            if (currentGradeIndex == 0) return; // 1つ目の階級以下には戻れない
             ChangeGradeIndex(-1);
         }
 
@@ -99,6 +103,7 @@ public class StageSelectManager : MonoBehaviour
             currentState = SelectionState.STAGE_SELECTION;
             StageID stageID = (StageID)(currentGradeIndex * 3 + currentStageIndex);
             contentsController.ViewOutLine(stageID);
+            stageSlideController.SlideIn((StageGrade)currentGradeIndex, (StageNumber)currentStageIndex);
         }
 
     }
@@ -110,11 +115,15 @@ public class StageSelectManager : MonoBehaviour
         // 入力に応じてcurrentStageIndexを更新(左右キー)
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
+            if(currentStageIndex == 2) return; // 3つ目のステージ以上には進めない
             ChangeStageIndex(1);
+            stageSlideController.SlideIn((StageGrade)currentGradeIndex, (StageNumber)currentStageIndex);
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            if (currentStageIndex == 0) return; // 1つ目のステージ以下には戻れない
             ChangeStageIndex(-1);
+            stageSlideController.SlideIn((StageGrade)currentGradeIndex, (StageNumber)currentStageIndex);
         }
 
         if (Input.GetKeyDown(KeyCode.Backspace))
@@ -123,7 +132,8 @@ public class StageSelectManager : MonoBehaviour
             currentState = SelectionState.GRADE_SELECTION;
             // ステージインデックスをリセット
             currentStageIndex = 0;
-            Debug.Log("Switched to Grade Selection");
+            contentsController.HideOutLine();
+            stageSlideController.SlideOut();
         }
 
         if (Input.GetKeyDown(KeyCode.Space))

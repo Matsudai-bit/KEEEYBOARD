@@ -27,6 +27,7 @@ public class GameTile : MonoBehaviour
         LOCKED_DOOR,    // Œ®•t‚«”à
         PLAYER,
         SAFE,
+        MASH,
     }
 
     [Serializable]
@@ -68,6 +69,9 @@ public class GameTile : MonoBehaviour
 
     public TileType GetTileType()
     { return m_tileType; }
+
+    public void SetTileType(TileType value)
+    { m_tileType = value; }
 
 
     public void ChangeSprite(Sprite newSprite)

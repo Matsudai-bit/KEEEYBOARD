@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bf5f4a9688ef424498220c340338708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameTile: {fileID: 0}
-  child: {fileID: 0}
+  gameTile: {fileID: 5870402268707463807}
+  child: {fileID: 7292815566814512071}
 --- !u!1 &7292815566814512071
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,5 +110,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca81c83ccab1d3a4ea0382224c9c0ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_state: 0
   m_spriteData: {fileID: 0}
   m_key: 1

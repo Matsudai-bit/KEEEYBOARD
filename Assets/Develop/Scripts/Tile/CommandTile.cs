@@ -59,7 +59,11 @@ public class CommandTile : MonoBehaviour
         if (m_state != value)
         {
             m_state = value;
-            m_gameTile.ChangeSprite(m_spriteData.GetSprite(Key, m_state));
+            if (m_gameTile.GetTileType() == GameTile.TileType.COMMAND)
+            {
+                m_gameTile.ChangeSprite(m_spriteData.GetSprite(Key, m_state));
+
+            }
         }
     
     }

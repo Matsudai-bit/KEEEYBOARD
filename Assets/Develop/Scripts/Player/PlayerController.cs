@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.GraphicsBuffer;
+using UnityEngine.Tilemaps;
 
 /// <summary>
 /// プレイヤーのコントローラ
@@ -85,16 +87,23 @@ public class PlayerController : MonoBehaviour
         if (m_movableTileSelector.IsFoundTile(pressedKey))
         {
             var directionID = m_movableTileSelector.GetDirection(pressedKey);
+            var visitObject = m_gameTile.TilemapDatta.baseTilemap.GetInstantiatedObject(m_gameTile.CellPosition + TileDirectionData.GetMoveDirection(directionID)).GetComponent<GameTileParent>().Child;
+            if (visitObject.TryGetComponent<MahTileController>(out var mashTileController))
+            {
+                mashTileController.PunchWall();
+                if (mashTileController.MashingCount > 0)
+                return;
+            }
             if (TryMoveTile(directionID))
             {
-                var visitedTile = m_gameTile.TilemapDatta.baseTilemap.GetInstantiatedObject(m_gameTile.CellPosition).GetComponent<GameTileParent>().Child.GetComponent<CommandTile>();
+
+                var visitedTile = visitObject.GetComponent<CommandTile>();
                 m_visitedTileData.Add(new VisitedTileData(visitedTile, directionID));
 
                 VisitTile(m_gameTile.CellPosition);
                 SoundManager.GetInstance.RequestPlaying(SoundID.SE_INGAME_PLAYER_MOVE);
                 if (visitedTile.GameTile.GetTileType() == GameTile.TileType.SAFE)
                 {
-
                     StayTile();
                 }
             }
@@ -127,6 +136,7 @@ public class PlayerController : MonoBehaviour
                     m_visitedTileData.RemoveAt(i);
 
                 }
+                VisitTile(m_gameTile.CellPosition);
 
                 // 離されたキーに到達したらループ終了
                 if (currentKey == releasedKey)
@@ -245,5 +255,9 @@ public class PlayerController : MonoBehaviour
         }
         m_visitedTileData.Clear();
 
+        
+
     }
+
+  
 }

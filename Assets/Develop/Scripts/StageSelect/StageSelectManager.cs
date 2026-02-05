@@ -11,6 +11,8 @@ public class StageSelectManager : MonoBehaviour
     ContentsController contentsController;
     [SerializeField]
     StageSlideController stageSlideController;
+    [SerializeField]
+    LightController lightController;
 
 
     // 階級を示す列挙
@@ -103,8 +105,10 @@ public class StageSelectManager : MonoBehaviour
             // ステージ選択へ移行
             currentState = SelectionState.STAGE_SELECTION;
             StageID stageID = (StageID)(currentGradeIndex * 3 + currentStageIndex);
+            // ステージインの処理
             contentsController.ViewOutLine(stageID);
             stageSlideController.SlideIn((StageGrade)currentGradeIndex, (StageNumber)currentStageIndex);
+            lightController.PlayFlicker();
         }
 
     }
@@ -133,8 +137,10 @@ public class StageSelectManager : MonoBehaviour
             currentState = SelectionState.GRADE_SELECTION;
             // ステージインデックスをリセット
             currentStageIndex = 0;
+            // ステージアウトの処理
             contentsController.HideOutLine();
             stageSlideController.SlideOut();
+            lightController.StopFlicker();
         }
 
         if (Input.GetKeyDown(KeyCode.Space))

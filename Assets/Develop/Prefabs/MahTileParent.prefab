@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_state: 0
-  m_spriteData: {fileID: 0}
+  m_spriteData: {fileID: 11400000, guid: e616a801c55e26b4395394fc7f148d95, type: 2}
   m_key: 15
 --- !u!114 &7169741302132013382
 MonoBehaviour:
@@ -137,3 +137,4 @@ MonoBehaviour:
   m_mashingPunchTextUI: {fileID: 0}
   m_canvas: {fileID: 0}
   m_timeCounter: 0
+  m_key: 0

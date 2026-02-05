@@ -80,10 +80,10 @@ public class GameContext : MonoBehaviour
 
     [Header("セーブデータ")]
     [SerializeField]
+    private SaveData m_saveData;
 
     private GameSettingParameters m_gameSettingParameters = new GameSettingParameters(); // ゲーム設定パラメータ
 
-    private SaveData m_saveData;
     private SaveDataManager m_saveDataManager;
 
 

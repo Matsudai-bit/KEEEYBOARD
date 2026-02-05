@@ -3,6 +3,7 @@ using DG.Tweening;
 using UnityEngine.Rendering;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using System;
 
 public class BoardsController : MonoBehaviour
 {
@@ -40,7 +41,7 @@ public class BoardsController : MonoBehaviour
 
     }
 
-    public void SlideBoard(StageSelectManager.StageGrade currentGrade)
+    public void SlideBoard(StageSelectManager.StageGrade currentGrade, Action action)
     {
 
         float targetPosX = startAnchoredPosition.x + (-800f * (int)currentGrade);
@@ -52,6 +53,8 @@ public class BoardsController : MonoBehaviour
            .OnComplete(() =>
            {
                contentsController.ViewContents(currentGrade);
+
+               action.Invoke();
            })
            .SetLink(gameObject);
 

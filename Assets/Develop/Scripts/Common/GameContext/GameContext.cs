@@ -80,10 +80,10 @@ public class GameContext : MonoBehaviour
 
     [Header("セーブデータ")]
     [SerializeField]
+    private SaveData m_saveData;
 
     private GameSettingParameters m_gameSettingParameters = new GameSettingParameters(); // ゲーム設定パラメータ
 
-    private SaveData m_saveData;
     private SaveDataManager m_saveDataManager;
 
 
@@ -157,15 +157,15 @@ public class GameContext : MonoBehaviour
     //    int stageCount = 5;
     //    for (int w = 0; w < worldCount; w++)
     //    {
-    //        WorldID worldID = (WorldID)w;
-    //        if (saveData.worldDataDict.ContainsKey(worldID))
+    //        GameStage.GradeID gradeID = (GameStage.GradeID)w;
+    //        if (saveData.gradeDataDict.ContainsKey(gradeID))
     //        {
-    //            SaveData.WorldData worldData = saveData.worldDataDict[worldID];
-    //            worldData.isLocked = false;
+    //            SaveData.WorldData gradeData = saveData.gradeDataDict[gradeID];
+    //            gradeData.isLocked = false;
     //            for (int s = 0; s < stageCount; s++)
     //            {
-    //                StageID stageID = (StageID)s;
-    //                SaveData.StageData stageData = worldData.stageDataList.Find(sd => sd.stageID == stageID);
+    //                GameStage.StageID stageID = (GameStage.StageID)s;
+    //                SaveData.StageData stageData = gradeData.stageDataList.Find(sd => sd.stageID == stageID);
     //                if (stageData != null)
     //                {
     //                    stageData.stageStatus.isLocked = false;
@@ -211,59 +211,59 @@ public class GameContext : MonoBehaviour
     }
 
 
-    ///// <summary>
-    ///// 次のステージをアンロックする
-    ///// </summary>
-    //public void UnlockNextStage()
-    //{
-    //    // 次のステージをアンロックする処理をここに実装
-    //    int worldCount = 5;
-    //    int stageCount = 5;
-    //    // ワールドごとにステージをチェックして現在最後に空いたステージを見つける
-    //    for (int w = 0; w < worldCount; w++)
-    //    {
-    //        WorldID worldID = (WorldID)w;
-    //        if (m_saveData.worldDataDict.ContainsKey(worldID))
-    //        {
-    //            SaveData.WorldData worldData = m_saveData.worldDataDict[worldID];
-    //            worldData.isLocked = false;
-    //            for (int s = 0; s < stageCount; s++)
-    //            {
-    //                StageID stageID = (StageID)s;
-    //                SaveData.StageData stageData = worldData.stageDataList.Find(sd => sd.stageID == stageID);
-    //                if (stageData != null && !stageData.stageStatus.isLocked)
-    //                {
-    //                    // 次のステージをアンロック
-    //                    int nextStageIndex = s + 1;
-    //                    if (nextStageIndex < stageCount)
-    //                    {
-    //                        StageID nextStageID = (StageID)nextStageIndex;
-    //                        SaveData.StageData nextStageData = worldData.stageDataList.Find(sd => sd.stageID == nextStageID);
-    //                        if (nextStageData != null)
-    //                        {
-    //                            nextStageData.stageStatus.isLocked = false;
-    //                            return; // 一つアンロックしたら終了
-    //                        }
-    //                    }
-    //                }
-    //            }
-    //        }
-    //    }
-    //}
+    /// <summary>
+    /// 次のステージをアンロックする
+    /// </summary>
+    public void UnlockNextStage()
+    {
+        // 次のステージをアンロックする処理をここに実装
+        int worldCount = 5;
+        int stageCount = 5;
+        // ワールドごとにステージをチェックして現在最後に空いたステージを見つける
+        for (int w = 0; w < worldCount; w++)
+        {
+            GameStage.GradeID gradeID = (GameStage.GradeID)w;
+            if (m_saveData.gradeDataDict.ContainsKey(gradeID.ToString()))
+            {
+                SaveData.GradeData gradeData = m_saveData.gradeDataDict[gradeID.ToString()];
+                gradeData.isLocked = false;
+                for (int s = 0; s < stageCount; s++)
+                {
+                    GameStage.StageID stageID = (GameStage.StageID)s;
+                    SaveData.StageData stageData = gradeData.stageDataList.Find(sd => sd.stageID == stageID.ToString());
+                    if (stageData != null && !stageData.stageStatus.isLocked)
+                    {
+                        // 次のステージをアンロック
+                        int nextStageIndex = s + 1;
+                        if (nextStageIndex < stageCount)
+                        {
+                            GameStage.StageID nextGameStage = (GameStage.StageID)nextStageIndex;
+                            SaveData.StageData nextStageData = gradeData.stageDataList.Find(sd => sd.stageID == nextGameStage.ToString());
+                            if (nextStageData != null)
+                            {
+                                nextStageData.stageStatus.isLocked = false;
+                                return; // 一つアンロックしたら終了
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 
-    //public void UnlockNextStage(WorldID worldID, StageID stageID)
+    //public void UnlockNextStage(GameStage.GradeID gradeID, GameStage.StageID stageID)
     //{
     //    // 指定されたステージの次のステージをアンロックする処理をここに実装
-    //    if (m_saveData.worldDataDict.ContainsKey(worldID))
+    //    if (m_saveData.gradeDataDict.ContainsKey(gradeID))
     //    {
-    //        SaveData.WorldData worldData = m_saveData.worldDataDict[worldID];
+    //        SaveData.WorldData gradeData = m_saveData.gradeDataDict[gradeID];
     //        int nextStageIndex = (int)stageID + 1;
 
     //        // 同じワールド内の次のステージをアンロック
     //        if (nextStageIndex < 5) // ステージ数が5の場合
     //        {
-    //            StageID nextStageID = (StageID)nextStageIndex;
-    //            SaveData.StageData nextStageData = worldData.stageDataList.Find(sd => sd.stageID == nextStageID);
+    //            GameStage.StageID nextGameStage.StageID = (GameStage.StageID)nextStageIndex;
+    //            SaveData.StageData nextStageData = gradeData.stageDataList.Find(sd => sd.stageID == nextGameStage.StageID);
     //            if (nextStageData != null)
     //            {
     //                nextStageData.stageStatus.isLocked = false;
@@ -272,16 +272,16 @@ public class GameContext : MonoBehaviour
     //        // 次のワールドの最初のステージをアンロック
     //        else
     //        {
-    //            int nextWorldIndex = (int)worldID + 1;
+    //            int nextWorldIndex = (int)gradeID + 1;
     //            if (nextWorldIndex < 5) // ワールド数が5の場合
     //            {
-    //                WorldID nextWorldID = (WorldID)nextWorldIndex;
+    //                GameStage.GradeID nextGameStage.GradeID = (GameStage.GradeID)nextWorldIndex;
 
-    //                if (m_saveData.worldDataDict.ContainsKey(nextWorldID))
+    //                if (m_saveData.gradeDataDict.ContainsKey(nextGameStage.GradeID))
     //                {
-    //                    SaveData.WorldData nextWorldData = m_saveData.worldDataDict[nextWorldID];
+    //                    SaveData.WorldData nextWorldData = m_saveData.gradeDataDict[nextGameStage.GradeID];
     //                    nextWorldData.isLocked = false;
-    //                    SaveData.StageData firstStageData = nextWorldData.stageDataList.Find(sd => sd.stageID == StageID.STAGE_1);
+    //                    SaveData.StageData firstStageData = nextWorldData.stageDataList.Find(sd => sd.stageID == GameStage.StageID.STAGE_1);
     //                    if (firstStageData != null)
     //                    {
     //                        firstStageData.stageStatus.isLocked = false;

@@ -29,8 +29,22 @@ public class MashCountBrush : GridBrush // GameObjectBrush ではなく GridBrush を
         var tile = tilemap.GetTile<MashingTile>(pos);
         if (tile == null) return;
 
-        var instance = Object.Instantiate(tile);
-        instance.MashingCount = mashCountPerTile;
-        tilemap.SetTile(pos, instance);
+        //var instance = Object.Instantiate(tile);
+        //instance.MashingCount = mashCountPerTile;
+        //tilemap.SetTile(pos, instance);
+
+        // 2. データ管理コンポーネントを取得（なければ追加）
+        var dataManager = target.GetComponent<MashingDatabase>();
+        if (dataManager == null)
+        {
+            dataManager = target.AddComponent<MashingDatabase>();
+        }
+
+        // 3. 座標に対してカウントを記録（タイル自体は複製しない！）
+        dataManager.AddData(pos, tile.KeyCode, mashCountPerTile);
+
+        EditorUtility.SetDirty(target);
+        PrefabUtility.RecordPrefabInstancePropertyModifications(target);
+        Debug.Log(target.name +" :正常に配置");
     }
 }

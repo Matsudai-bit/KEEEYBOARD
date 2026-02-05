@@ -88,7 +88,8 @@ public class PlayerController : MonoBehaviour
         {
             var directionID = m_movableTileSelector.GetDirection(pressedKey);
             var visitTile = m_gameTile.TilemapDatta.baseTilemap.GetInstantiatedObject(m_gameTile.CellPosition + TileDirectionData.GetMoveDirection(directionID)).GetComponent<GameTileParent>().GameTile;
-            if (visitTile.GetTileType() == GameTile.TileType.MASH && visitTile.gameObject.TryGetComponent<MahTileController>(out var mashTileController))
+            if (visitTile.GetTileType() == GameTile.TileType.WALL) { return; }
+                if (visitTile.GetTileType() == GameTile.TileType.MASH && visitTile.gameObject.TryGetComponent<MahTileController>(out var mashTileController))
             {
                 mashTileController.PunchWall();
                 if (mashTileController.MashingCount > 0)
@@ -105,6 +106,7 @@ public class PlayerController : MonoBehaviour
                 if (visitedTile.GameTile.GetTileType() == GameTile.TileType.SAFE)
                 {
                     StayTile();
+
                 }
             }
 

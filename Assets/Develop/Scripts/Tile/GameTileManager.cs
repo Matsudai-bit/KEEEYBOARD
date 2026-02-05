@@ -11,41 +11,39 @@ public class GameTileManager : MonoBehaviour
     [SerializeField]
     private string m_commandTiletipBaseName;
     [SerializeField]
-    private Tilemap m_baseTilemap;
-    [SerializeField]
-    private Tilemap m_topTilemap;
-    [SerializeField]
     private UsingKeyData m_usingKey;
     [SerializeField]
     private CommandSpriteData m_commandSpriteData;
 
+    [Header("ステージ管理")]
+    [SerializeField]
+    StageManager m_stageManager;
+
     private Dictionary<Key, List<GameTile>> m_gameTileDict;
 
-    
 
-    private void Awake()
+
+    private void Start()
     {
-        
+
+
+    }
+
+
+    public void SetUpTile(Tilemap baseTilemap, Tilemap topTilemap)
+    {
         m_gameTileDict = new();
         // 辞書の作成
         foreach (var keyCode in m_usingKey.KeyCodes)
         {
             m_gameTileDict.Add(keyCode, new());
         }
-
         // タイルマップの座標を設定
-        InitializeTilemap(m_baseTilemap, m_gameTileDict, m_commandTiletipBaseName, m_usingKey, m_baseTilemap, m_topTilemap, m_commandSpriteData, m_gameDirector);
+        InitializeTilemap(baseTilemap, m_gameTileDict, m_commandTiletipBaseName, m_usingKey, baseTilemap, topTilemap, m_commandSpriteData, m_gameDirector);
 
-        InitializeTilemap(m_topTilemap, m_gameTileDict, m_commandTiletipBaseName, m_usingKey, m_baseTilemap, m_topTilemap, m_commandSpriteData, m_gameDirector);
+        InitializeTilemap(topTilemap, m_gameTileDict, m_commandTiletipBaseName, m_usingKey, baseTilemap, topTilemap, m_commandSpriteData, m_gameDirector);
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -76,13 +74,13 @@ public class GameTileManager : MonoBehaviour
     
     }
 
-    private void UpdateTileSprite(Vector3Int position, Sprite sprite)
-    {
-        Tile newTile = ScriptableObject.CreateInstance<Tile>();
-        newTile.sprite = sprite;
+    //private void UpdateTileSprite(Vector3Int position, Sprite sprite)
+    //{
+    //    Tile newTile = ScriptableObject.CreateInstance<Tile>();
+    //    newTile.sprite = sprite;
         
-        m_baseTilemap.SetTile(position, newTile);
-    }
+    //    m_baseTilemap.SetTile(position, newTile);
+    //}
 
     // 1つのメソッドで「座標セット」と「辞書登録」を同時に行う
     static void InitializeTilemap( Tilemap tilemap, Dictionary<Key, List<GameTile>> dict, string baseName, UsingKeyData keys, Tilemap baseTilemap, Tilemap topTilemap, CommandSpriteData commandSpriteData, GameDirector gameDirector)
@@ -91,7 +89,11 @@ public class GameTileManager : MonoBehaviour
         {
             if (!tilemap.HasTile(pos)) continue;
 
-            GameObject tileObj = tilemap.GetInstantiatedObject(pos).GetComponent<GameTileParent>().Child;
+            var parent = tilemap.GetInstantiatedObject(pos);
+            if (parent == null) continue;
+            var gameTileParent = parent.GetComponent<GameTileParent>();
+            if (gameTileParent == null) continue;
+            var tileObj = gameTileParent.Child;
             if (tileObj == null) continue;
 
             if (tileObj.TryGetComponent<GameTile>(out var gameTile))

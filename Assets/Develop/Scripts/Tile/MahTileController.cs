@@ -2,6 +2,7 @@ using DG.Tweening;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
@@ -49,6 +50,14 @@ public class MahTileController : MonoBehaviour
     [SerializeField]
     float m_timeCounter;
 
+    [SerializeField]
+    Key m_key;
+
+    public Key KeyCode
+    {
+        get { return m_key; }
+        set { m_key = value; }
+    }
 
     private TextMeshProUGUI mashingPunchText;
 
@@ -73,7 +82,10 @@ public class MahTileController : MonoBehaviour
 
     private void Start()
     {
-        m_mashingStartCount = m_gameTile.Tilemap.GetTile<MashingTile>(m_gameTile.CellPosition).MashingCount;
+        Key keyCode;
+        m_gameTile.Tilemap.gameObject.GetComponent<MashingDatabase>().GetData(m_gameTile.CellPosition, out keyCode, out m_mashingStartCount) ;
+
+        m_commandTile.Key = keyCode;
     }
 
     private void Update()
@@ -93,7 +105,7 @@ public class MahTileController : MonoBehaviour
         m_timeCounter = 0.0f;
 
         DrawCounterText(GetRemainingCount());
-        m_mashingPunchTextUI.SetActive(true);
+        m_mashingPunchTextUI.GetComponent<TextMeshProUGUI>().enabled = true;
 
 
         if (GetRemainingCount() <= 0 && !DOTween.IsTweening(m_mashingPunchTextUI.GetComponent<TextMeshProUGUI>()))
@@ -101,8 +113,7 @@ public class MahTileController : MonoBehaviour
             // 普通のコマンドタイルにする
             m_gameTile.SetTileType(GameTile.TileType.COMMAND);
             m_commandTile.SetState(CommandTile.State.DEFAULT);
-            m_mashingPunchTextUI.SetActive(false);
-          //  Destroy(this);
+            m_mashingPunchTextUI.GetComponent<TextMeshProUGUI>().enabled = false;
             return;
         }
         StartFadeOut();
@@ -146,7 +157,7 @@ public class MahTileController : MonoBehaviour
     {
         m_mashingPunchTextUI.GetComponent<TextMeshProUGUI>().DOFade(0.0f, m_fadeOutTime).OnComplete(()=> {
             m_hitCurrentCount = 0;
-        });
+        }).SetEase(Ease.InSine);
 
     }
 

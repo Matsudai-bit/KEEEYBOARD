@@ -28,6 +28,7 @@ public class GameTile : MonoBehaviour
         PLAYER,
         SAFE,
         MASH,
+        WALL
     }
 
     [Serializable]

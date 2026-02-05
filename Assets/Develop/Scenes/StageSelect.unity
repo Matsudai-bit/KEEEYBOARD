@@ -1741,6 +1741,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99210c6245a8d974ab8dbf3fe8c19c59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SlideImages:
+  - {fileID: 8388227909272950739, guid: 53962e53c0efddb42992b51a879d6e8a, type: 3}
+  - {fileID: 3112904238500282, guid: 23e579f95fbd52748b49ce791d348679, type: 3}
+  - {fileID: 5933607795885485218, guid: 734a1fd621712ce4c9e8abaef1b2ea45, type: 3}
   stageIDText: {fileID: 958182570}
 --- !u!1 &958182570
 GameObject:

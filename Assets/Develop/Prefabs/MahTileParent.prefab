@@ -98,7 +98,7 @@ MonoBehaviour:
   m_tilemapData:
     baseTilemap: {fileID: 0}
     topTilemap: {fileID: 0}
-  m_tileType: 2
+  m_tileType: 6
 --- !u!114 &509973887736461312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +126,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6d236a8320128c46afc7ba491fdce94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_mashingCount: 0
+  m_normalColor: {r: 1, g: 1, b: 1, a: 1}
+  m_lastColor: {r: 1, g: 0.94594467, b: 0, a: 1}
+  m_viewTime: 3
+  m_fadeOutTime: 0.5
+  m_mashingStartCount: 0
+  m_hitCurrentCount: 0
   m_gameTile: {fileID: 0}
   m_commandTile: {fileID: 0}
+  m_mashingPunchTextUI: {fileID: 0}
+  m_canvas: {fileID: 0}
+  m_timeCounter: 0

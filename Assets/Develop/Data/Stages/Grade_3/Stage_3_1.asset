@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc2761a26d8f8ee41a91b5212cf615fa, type: 3}
-  m_Name: Stage_1_1
+  m_Name: Stage_3_1
   m_EditorClassIdentifier: 
-  baseTilemap: {fileID: 5317936424494781130, guid: 34b5ae7cbe881a7459f0e028e44305f7, type: 3}
-  topTilemap: {fileID: 6665486155549801799, guid: 3b193c5c63fa4874894b3264004db92b, type: 3}
-  m_timeLimit: 300
+  baseTilemap: {fileID: 2964361347528352860, guid: f26750d711419e242be590e53a558487, type: 3}
+  topTilemap: {fileID: 8108969529840785818, guid: 8a49502d1a5afc949a9f25586dade086, type: 3}
+  m_timeLimit: 120

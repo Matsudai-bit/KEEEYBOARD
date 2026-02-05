@@ -87,8 +87,8 @@ public class PlayerController : MonoBehaviour
         if (m_movableTileSelector.IsFoundTile(pressedKey))
         {
             var directionID = m_movableTileSelector.GetDirection(pressedKey);
-            var visitObject = m_gameTile.TilemapDatta.baseTilemap.GetInstantiatedObject(m_gameTile.CellPosition + TileDirectionData.GetMoveDirection(directionID)).GetComponent<GameTileParent>().Child;
-            if (visitObject.TryGetComponent<MahTileController>(out var mashTileController))
+            var visitTile = m_gameTile.TilemapDatta.baseTilemap.GetInstantiatedObject(m_gameTile.CellPosition + TileDirectionData.GetMoveDirection(directionID)).GetComponent<GameTileParent>().GameTile;
+            if (visitTile.GetTileType() == GameTile.TileType.MASH && visitTile.gameObject.TryGetComponent<MahTileController>(out var mashTileController))
             {
                 mashTileController.PunchWall();
                 if (mashTileController.MashingCount > 0)
@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
             if (TryMoveTile(directionID))
             {
 
-                var visitedTile = visitObject.GetComponent<CommandTile>();
+                var visitedTile = visitTile.gameObject.GetComponent<CommandTile>();
                 m_visitedTileData.Add(new VisitedTileData(visitedTile, directionID));
 
                 VisitTile(m_gameTile.CellPosition);

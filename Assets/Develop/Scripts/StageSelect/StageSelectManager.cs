@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using static UnityEditor.VersionControl.Asset;
 using UnityEngine.InputSystem;
 
 public class StageSelectManager : MonoBehaviour
@@ -227,7 +226,12 @@ public class StageSelectManager : MonoBehaviour
         if (!context.performed ) { return; }
 
         if (currentState == SelectionState.GRADE_SELECTION)
-        { 
+        {
+
+            GameStage.GradeID gradeID;
+            GameStage.StageID stageID;
+            ConvertGradeIDAndStageID(currentGradeIndex, currentStageIndex, out gradeID, out stageID);
+            if (GameContext.GetInstance.GetSaveData().gradeDataDict[gradeID.ToString()].isLocked) { return; }
             InToStageSelect(currentGradeIndex, currentStageIndex);
             ShowStageInformation(currentGradeIndex, currentStageIndex);
             currentState = SelectionState.STAGE_SELECTION;

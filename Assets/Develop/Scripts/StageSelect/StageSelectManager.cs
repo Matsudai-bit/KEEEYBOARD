@@ -6,6 +6,7 @@ public class StageSelectManager : MonoBehaviour
     [Header("UI References")]
     [SerializeField]
     private UnityEngine.CanvasGroup Boards;
+
     [SerializeField]
     ContentsController contentsController;
     [SerializeField]

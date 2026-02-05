@@ -1,9 +1,17 @@
 using DG.Tweening;
+using NUnit.Framework;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StageSlideController : MonoBehaviour
 {
+    [Header("Source Image")]
+    [SerializeField]
+    private List<Sprite> SlideImages = new();
+
     [SerializeField]
     private GameObject stageIDText;
 
@@ -30,6 +38,9 @@ public class StageSlideController : MonoBehaviour
 
     public void SlideIn(StageSelectManager.StageGrade grade, StageSelectManager.StageNumber number)
     {
+        // 画像の設定
+        SetSlideImage(grade);
+
         // ステージIDをテキストにセット
         SetStageIDToText(grade, number);
 
@@ -66,6 +77,19 @@ public class StageSlideController : MonoBehaviour
         // テキストの設定
         stageIDTextComponent.text = fullText;
 
+    }
+
+    private void SetSlideImage(StageSelectManager.StageGrade grade)
+    {
+        // インデックス外のアクセス防止
+        if (SlideImages.Count == 0)
+        {
+            Debug.LogError("SlideImagesリストが空です。");
+            return;
+        }
+
+        Image targetSlide = GetComponentInChildren<Image>();
+        targetSlide.sprite = SlideImages[(int)grade];
     }
 
 }

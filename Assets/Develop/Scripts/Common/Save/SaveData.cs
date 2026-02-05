@@ -64,7 +64,7 @@ public class SaveData
 
     // グレードデータ辞書
     
-    public Dictionary<string, GradeData> worldDataDict = new Dictionary<string, GradeData>();
+    public Dictionary<string, GradeData> gradeDataDict = new Dictionary<string, GradeData>();
 
 
     /// <summary>
@@ -80,7 +80,7 @@ public class SaveData
         jsonSaver.worldDataList = new List<GradeData>();
 
         jsonSaver.worldDataList.Clear();
-        foreach (var worldData in worldDataDict)
+        foreach (var worldData in gradeDataDict)
         {
             
             jsonSaver.worldDataList.Add(worldData.Value);
@@ -97,7 +97,7 @@ public class SaveData
         playerGrade = jsonSaver.playerGrade;
         foreach (var worldData in jsonSaver.worldDataList)
         {
-            worldDataDict[worldData.gradeID] = worldData;
+            gradeDataDict[worldData.gradeID] = worldData;
         }
     }
 
@@ -129,8 +129,11 @@ public class SaveData
                 stageClearData.stageStatus.clearTime = 0.0f;
                 worldData.stageDataList.Add(stageClearData);
             }
-            worldDataDict[gradeID.ToString()] = worldData;
+            gradeDataDict[gradeID.ToString()] = worldData;
         }
+
+        gradeDataDict[GameStage.GradeID.GRADE_1.ToString()].isLocked = false;
+        GetStageStatus(GameStage.GradeID.GRADE_1, GameStage.StageID.STAGE_1).isLocked = false;
     }
 
     /// <summary>
@@ -141,6 +144,6 @@ public class SaveData
     /// <returns></returns>
     public StageStatus GetStageStatus(GameStage.GradeID worldID, GameStage.StageID stageID)
     {
-        return worldDataDict[worldID.ToString()].stageDataList[(int)stageID].stageStatus;
+        return gradeDataDict[worldID.ToString()].stageDataList[(int)stageID].stageStatus;
     }
 }

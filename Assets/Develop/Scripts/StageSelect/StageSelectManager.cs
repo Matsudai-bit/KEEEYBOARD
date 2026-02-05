@@ -17,6 +17,13 @@ public class StageSelectManager : MonoBehaviour
     [SerializeField]
     LightController lightController;
 
+    [Header("シーンのフェードインエフェクト")]
+    [SerializeField]
+    SceneTransitionEffect m_sceneFadeInEffect;
+    [Header("シーンのフェードアウトエフェクト")]
+    [SerializeField]
+    SceneTransitionEffect m_sceneFadeOutEffect;
+
     [SerializeField]
     GameObject m_arrowRight;
 
@@ -77,18 +84,24 @@ public class StageSelectManager : MonoBehaviour
         m_arrowRight.SetActive(false);
         stageSlideController.Initialize();
 
-        if (GameStatus.GetInstance.CurrentStateID == GameStatus.ID.RESULT_MODE)
-        {
+        m_sceneFadeInEffect.StartTransition(() => {
+            if (GameStatus.GetInstance.CurrentStateID == GameStatus.ID.RESULT_MODE)
+            {
 
-            currentState = SelectionState.RESULT_MODE;
-     
-            ChangeGradeIndex(1, () => {
-                InToStageSelect(currentGradeIndex, currentStageIndex);
-                ShowStageInformation(currentGradeIndex, currentStageIndex, true);
-            });
-            ChangeStageIndex(0);
-     
-        }
+                currentState = SelectionState.RESULT_MODE;
+
+                currentGradeIndex = 0;
+                currentGradeIndex = 0;
+
+                ChangeGradeIndex((int)GameStatus.GetInstance.CurrentPlayingStage.gradeID, () => {
+                    InToStageSelect(currentGradeIndex, currentStageIndex);
+                    ShowStageInformation(currentGradeIndex, currentStageIndex, true);
+                });
+                ChangeStageIndex((int)GameStatus.GetInstance.CurrentPlayingStage.stageID);
+
+            }
+        });
+       
     }
 
     // Update is called once per frame
@@ -145,12 +158,10 @@ public class StageSelectManager : MonoBehaviour
 
     private void ShowStageInformation(int gradeIndex, int stageIndex, bool completeAnimation = false)
     {
-        GameStage.GradeID gradeID;
-        GameStage.StageID stageID;
-        ConvertGradeIDAndStageID(gradeIndex, stageIndex, out gradeID, out stageID);
-        bool isCompleted = GameContext.GetInstance.GetSaveData().GetStageStatus(gradeID, stageID).isClear;
 
-        stageSlideController.SlideIn((StageGrade)gradeIndex, (StageNumber)stageIndex, isCompleted, completeAnimation);
+        var stageStatus = GetStageStatus(gradeIndex, stageIndex);
+       
+        stageSlideController.SlideIn((StageGrade)gradeIndex, (StageNumber)stageIndex, stageStatus.isClear, completeAnimation);
     }
 
     // ステージ選択の処理
@@ -213,7 +224,7 @@ public class StageSelectManager : MonoBehaviour
 
     public void OnSubmit(InputAction.CallbackContext context)
     {
-        if (!context.performed) { return; }
+        if (!context.performed ) { return; }
 
         if (currentState == SelectionState.GRADE_SELECTION)
         { 
@@ -222,12 +233,21 @@ public class StageSelectManager : MonoBehaviour
             currentState = SelectionState.STAGE_SELECTION;
             
         }
-        if (currentState == SelectionState.STAGE_SELECTION)
+        else if (currentState == SelectionState.STAGE_SELECTION)
         {
+            if (GetStageStatus(currentGradeIndex, currentStageIndex).isLocked) { return; }
 
             // ステージ確定の処理(階級 * 3 + ステージ番号)
             StageID selectedStage = (StageID)(currentGradeIndex * 3 + currentStageIndex);
             Debug.Log("Selected Stage: " + selectedStage);
+
+            GameStage.GradeID gradeID;
+            GameStage.StageID stageID;
+            ConvertGradeIDAndStageID(currentGradeIndex, currentStageIndex, out gradeID, out stageID);
+
+            GameStatus.GetInstance.CurrentPlayingStage = new(gradeID, stageID);
+
+            SceneTransitionManager.GetInstance.TransitionToScene("InGame", m_sceneFadeOutEffect);
 
         }
     }
@@ -285,7 +305,7 @@ public class StageSelectManager : MonoBehaviour
             }
         }
 
-        if (currentState == SelectionState.GRADE_SELECTION)
+        else if (currentState == SelectionState.GRADE_SELECTION)
         {
             // 入力に応じてcurrentGradeIndexを更新(左右キー)
             if (right)
@@ -304,4 +324,11 @@ public class StageSelectManager : MonoBehaviour
     }
 
 
+    SaveData.StageStatus GetStageStatus(int gradeIndex, int stageIndex)
+    {
+        GameStage.GradeID gradeID;
+        GameStage.StageID stageID;
+        ConvertGradeIDAndStageID(gradeIndex, stageIndex, out gradeID, out stageID);
+        return GameContext.GetInstance.GetSaveData().GetStageStatus(gradeID, stageID);
+    }
 }

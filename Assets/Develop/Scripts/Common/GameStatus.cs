@@ -10,9 +10,25 @@ public class GameStatus : MonoBehaviour
         GAMEPLAY,
         RESULT_MODE,
     }
+    [Serializable]
+    public struct PlayingStage
+    {
+        public GameStage.GradeID gradeID;
+        public GameStage.StageID stageID;
+
+        public PlayingStage(GameStage.GradeID gradeID, GameStage.StageID stageID)
+        {
+            this.gradeID = gradeID;
+            this.stageID = stageID;
+        }
+    }
 
     [SerializeField]
     private ID m_startId;
+
+    [Header("プレイするステージ情報")]
+    [SerializeField]
+    private PlayingStage m_playingStage;
 
     private ID m_currentID;
 
@@ -20,6 +36,13 @@ public class GameStatus : MonoBehaviour
     {
         get { return m_currentID; }
         set { m_currentID = value; }
+    }
+
+
+    public PlayingStage CurrentPlayingStage
+    {
+        get { return m_playingStage; }
+        set { m_playingStage = value; }
     }
 
     #region シングルトンの実装
@@ -40,7 +63,6 @@ public class GameStatus : MonoBehaviour
         }
     }
 
-    #endregion
 
     /// <summary>
     /// Awakeメソッドでシングルトンインスタンスを設定する
@@ -52,13 +74,20 @@ public class GameStatus : MonoBehaviour
             m_instance = this;
             DontDestroyOnLoad(gameObject);
 
-            // 初期化
-            m_currentID = m_startId;
+            Initialize();
         }
         else
         {
             Destroy(gameObject);
         }
 
+    }
+    #endregion
+
+
+    private void Initialize()
+    {
+        // 初期化
+        m_currentID = m_startId;
     }
 }

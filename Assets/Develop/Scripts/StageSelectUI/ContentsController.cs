@@ -37,7 +37,7 @@ public class ContentsController : MonoBehaviour
         {
             // 1. Tweenの登録（これはコピー経由でも contentObject 自体は参照型なので動きます）
             viewTween.Add(
-                contentsList[i].contentObject.transform.DOScale(Vector3.one, 0.125f)
+                contentsList[i].contentObject.transform.DOScale(new Vector3(0.5f, 0.5f, 0.5f), 0.125f)
                 .SetEase(Ease.InOutSine)
                 .SetAutoKill(false)
                 .SetDelay((int)contentsList[i].number * 0.125f)

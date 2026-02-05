@@ -1,11 +1,19 @@
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.Rendering;
+using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class BoardsController : MonoBehaviour
 {
     [SerializeField]
     ContentsController contentsController;
+
+    [SerializeField]
+    private List<Sprite> BGImages = new();
+
+    [SerializeField]
+    private int m_gradeIndex;
 
     private RectTransform rectTransform;
     private Vector2 startAnchoredPosition = new Vector2(999, 999);
@@ -19,10 +27,23 @@ public class BoardsController : MonoBehaviour
         startAnchoredPosition = rectTransform.anchoredPosition;
     }
 
+    void Start()
+    {
+        // インデックス外のアクセス防止
+        if ( BGImages.Count == 0)
+        {
+            Debug.LogError("BGImagesリストが空です。");
+            return;
+        }
+
+        GetComponent<Image>().sprite = BGImages[m_gradeIndex];
+
+    }
+
     public void SlideBoard(StageSelectManager.StageGrade currentGrade)
     {
 
-        float targetPosX = startAnchoredPosition.x + (-1920.0f * (int)currentGrade);
+        float targetPosX = startAnchoredPosition.x + (-800f * (int)currentGrade);
 
         contentsController.HideContents();
 

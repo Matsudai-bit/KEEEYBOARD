@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc2761a26d8f8ee41a91b5212cf615fa, type: 3}
+  m_Name: Stage1_1_main
+  m_EditorClassIdentifier: 
+  baseTilemap: {fileID: 5317936424494781130, guid: 34b5ae7cbe881a7459f0e028e44305f7, type: 3}
+  topTilemap: {fileID: 6665486155549801799, guid: 3b193c5c63fa4874894b3264004db92b, type: 3}
+  m_timeLimit: 300

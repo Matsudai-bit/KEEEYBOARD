@@ -1073,7 +1073,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -32.1, y: 19}
-  m_SizeDelta: {x: 21.3, y: 50}
+  m_SizeDelta: {x: 36, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1120547482
 MonoBehaviour:
@@ -1612,7 +1612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_grid: {fileID: 569982879}
-  m_tilemapPair: {fileID: 11400000, guid: 44987ababec29cd4bb105e4c6e452989, type: 2}
+  m_tilemapPair: {fileID: 11400000, guid: 288b207bec9023a419563d34001e82f8, type: 2}
   m_timer: {fileID: 5418860536436551121}
   m_gameTileManager: {fileID: 651625677}
 --- !u!1 &1954129882

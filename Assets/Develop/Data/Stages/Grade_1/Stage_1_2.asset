@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseTilemap: {fileID: 2258142419928835669, guid: 77f96429f1339b045a570e97dd5d3bce, type: 3}
   topTilemap: {fileID: 7586099416482461074, guid: c99ac0f0a9c2aba4f91fcaac3c70ad51, type: 3}
-  m_timeLimit: 300
+  m_timeLimit: 240

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc2761a26d8f8ee41a91b5212cf615fa, type: 3}
   m_Name: Stage_3_2
   m_EditorClassIdentifier: 
-  baseTilemap: {fileID: 0}
-  topTilemap: {fileID: 0}
-  m_timeLimit: 0
+  baseTilemap: {fileID: 8439115233040015702, guid: 9dfe048ecdd78884cb1be0f791b27d3c, type: 3}
+  topTilemap: {fileID: 8351189409274947166, guid: 77f2b49d9015a3f4ba6e84b4e01f723c, type: 3}
+  m_timeLimit: 120

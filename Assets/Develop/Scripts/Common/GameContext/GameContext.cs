@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Linq;
 using UnityEngine;
 
 /// <summary>
@@ -125,7 +126,11 @@ public class GameContext : MonoBehaviour
     /// </summary>
     public void SaveGame()
     {
-        m_saveDataManager.Save(m_saveData, saveDataSetting.GetFileFullPath());
+        if (m_debugSettings.debugMode)
+            m_saveDataManager.Save(m_saveData, m_debugSettings.debugSaveData.GetFileFullPath());
+        else
+            m_saveDataManager.Save(m_saveData, saveDataSetting.GetFileFullPath());
+
     }
 
     /// <summary>
@@ -134,7 +139,7 @@ public class GameContext : MonoBehaviour
     public void ResetGame()
     {
         m_saveData = new SaveData();
-        SaveGame();
+       // SaveGame(saveDataSetting);
     }
 
     /// <summary>
@@ -146,37 +151,37 @@ public class GameContext : MonoBehaviour
         return m_gameSettingParameters;
     }
 
-    ///// <summary>
-    ///// デバッグモードを適用する
-    ///// </summary>
-    //static public void UnlockAllStage(SaveData saveData)
-    //{
-    //    // 全てのワールドとステージをアンロック
-      
-    //    int worldCount = 5;
-    //    int stageCount = 5;
-    //    for (int w = 0; w < worldCount; w++)
-    //    {
-    //        GameStage.GradeID gradeID = (GameStage.GradeID)w;
-    //        if (saveData.gradeDataDict.ContainsKey(gradeID))
-    //        {
-    //            SaveData.WorldData gradeData = saveData.gradeDataDict[gradeID];
-    //            gradeData.isLocked = false;
-    //            for (int s = 0; s < stageCount; s++)
-    //            {
-    //                GameStage.StageID stageID = (GameStage.StageID)s;
-    //                SaveData.StageData stageData = gradeData.stageDataList.Find(sd => sd.stageID == stageID);
-    //                if (stageData != null)
-    //                {
-    //                    stageData.stageStatus.isLocked = false;
-    //                    stageData.stageStatus.isClear = true;
-    //                }
-    //            }
-    //        }
-    //    }
-        
+    /// <summary>
+    /// デバッグモードを適用する
+    /// </summary>
+    static public void UnlockAllStage(SaveData saveData)
+    {
+        // 全てのワールドとステージをアンロック
 
-    //}
+        int worldCount = 3;
+        int stageCount = 3;
+        for (int w = 0; w < worldCount; w++)
+        {
+            GameStage.GradeID gradeID = (GameStage.GradeID)w;
+            if (saveData.gradeDataDict.ContainsKey(gradeID.ToString()))
+            {
+                SaveData.GradeData gradeData = saveData.gradeDataDict[gradeID.ToString()];
+                gradeData.isLocked = false;
+                for (int s = 0; s < stageCount; s++)
+                {
+                    GameStage.StageID stageID = (GameStage.StageID)s;
+                    SaveData.StageData stageData = gradeData.stageDataList.Find(sd => sd.stageID == stageID.ToString());
+                    if (stageData != null)
+                    {
+                        stageData.stageStatus.isLocked = false;
+                        stageData.stageStatus.isClear = true;
+                    }
+                }
+            }
+        }
+
+
+    }
 
     private string settingFilePath = "settingData.json";
     public bool SaveSettingData()
@@ -210,6 +215,29 @@ public class GameContext : MonoBehaviour
 
     }
 
+   public bool TryUnlockGrade(GameStage.GradeID gradeID)
+    {
+        if (GetSaveData().gradeDataDict[gradeID.ToString()].stageDataList.Any(item => item.stageStatus.isClear))
+        {
+            return TryUnlockNextGrade(gradeID);
+        }
+        return false;
+    }
+
+    public bool TryUnlockNextGrade(GameStage.GradeID gradeID)
+    {
+        var nextGrade = (GameStage.GradeID)(Mathf.Clamp((int)gradeID + 1, 0, 3));
+        SaveData.GradeData gradeData = GetSaveData().gradeDataDict[nextGrade.ToString()];
+
+        if (gradeData.isLocked)
+        {
+            gradeData.isLocked = false;
+            return true;
+        }
+
+        return false;
+    }
+
 
     /// <summary>
     /// 次のステージをアンロックする
@@ -217,8 +245,8 @@ public class GameContext : MonoBehaviour
     public void UnlockNextStage()
     {
         // 次のステージをアンロックする処理をここに実装
-        int worldCount = 5;
-        int stageCount = 5;
+        int worldCount = 3;
+        int stageCount = 3;
         // ワールドごとにステージをチェックして現在最後に空いたステージを見つける
         for (int w = 0; w < worldCount; w++)
         {
@@ -303,19 +331,21 @@ public class GameContext : MonoBehaviour
             // 全てのステージをアンロック
             if (m_debugSettings.unlockAllStages)
             {
-                //UnlockAllStage(m_saveData);
+                UnlockAllStage(m_saveData);
 
             }
+
         }
         else
         {
             // 通常セーブデータの読み込み 
             m_saveData = m_saveDataManager.Load(saveDataSetting.GetFileFullPath());
 
-
+            // ファイルが無い場合作成セーブデータの読み込み
+            SaveGame();
         }
 
-        // ファイルが無い場合作成セーブデータの読み込み
-        SaveGame();
+      
+            SaveGame();
     }
 }

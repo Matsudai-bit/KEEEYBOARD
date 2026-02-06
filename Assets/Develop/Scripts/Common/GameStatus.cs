@@ -8,6 +8,7 @@ public class GameStatus : MonoBehaviour
     {
         TITLE,
         GAMEPLAY,
+        STAGESELECT,
         RESULT_MODE,
     }
     [Serializable]

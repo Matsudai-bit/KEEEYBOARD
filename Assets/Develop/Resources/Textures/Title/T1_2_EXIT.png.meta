@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 0cd86c77165db014aaebc4cdeb12e0b8
+guid: fc1376af36c56b84dbe54c4b58edb386
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4483404364382883704
-    second: S1_1_BackGround_1srStage_0
+      213: 8431714408653567699
+    second: T1_2_EXIT_0
+  - first:
+      213: -3172263579051962809
+    second: T1_2_EXIT_1
+  - first:
+      213: 7196501547175194264
+    second: T1_2_EXIT_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -96,43 +102,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: S1_1_BackGround_1srStage_0
+      name: T1_2_EXIT_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1080
+        x: 67
+        y: 35
+        width: 59
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 880b5841c7fb7c1c0800000000000000
-      internalID: -4483404364382883704
+      spriteID: 3d6b65fd497730570800000000000000
+      internalID: 8431714408653567699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T1_2_EXIT_1
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 34
+        width: 58
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74ec2bc051bd9f3d0800000000000000
+      internalID: -3172263579051962809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T1_2_EXIT_2
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 78
+        width: 34
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89e2de8470c1fd360800000000000000
+      internalID: 7196501547175194264
       vertices: []
       indices: 
       edges: []
@@ -151,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      S1_1_BackGround_1srStage_0: -4483404364382883704
+      T1_2_EXIT_0: 8431714408653567699
+      T1_2_EXIT_1: -3172263579051962809
+      T1_2_EXIT_2: 7196501547175194264
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

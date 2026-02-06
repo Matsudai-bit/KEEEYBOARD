@@ -28,6 +28,8 @@ public class SpriteMultiLineTimer : MonoBehaviour
     private Tween fadeTween; // 生成したTweenを保持する変数
     private int warningAudioSourceID = -1;
 
+    private float currentTime = 10.0f;
+
     void Awake()
     {
         // 配列にまとめてアクセスしやすくする
@@ -36,7 +38,6 @@ public class SpriteMultiLineTimer : MonoBehaviour
 
     void Start()
     {
-        StartTimer(duration);
 
         fadeTween = timerCanvasGroup.DOFade(0.165f, 0.5f)
             .SetLoops(-1, LoopType.Yoyo)
@@ -45,24 +46,24 @@ public class SpriteMultiLineTimer : MonoBehaviour
             .Pause(); // 最初は停止しておく
     }
 
-    public void StartTimer(float time)
+    public void StartTimer()
     {
         timerTween?.Kill();
-        float timerValue = time;
-        previousSecond = Mathf.CeilToInt(time);
+        float timerValue = duration;
+        previousSecond = Mathf.CeilToInt(timerValue);
 
         // 数値を変動させるTween
         timerTween = DOTween.To(
             () => timerValue,
             x => UpdateDisplay(x),
             0f,
-            time
+            timerValue
         )
         .SetEase(Ease.Linear)
         .SetLink(gameObject); // オブジェクト破棄対策[2]
     }
 
-    public void RestartTimer(float time)
+    public void RestartTimer()
     {
         // リスタート時にフェードをリセットする処理を追加
         if (fadeTween != null)
@@ -74,7 +75,7 @@ public class SpriteMultiLineTimer : MonoBehaviour
             timerCanvasGroup.alpha = 1.0f; // 透明度を元に戻す
         }
 
-        StartTimer(time);
+        StartTimer();
         SoundManager.GetInstance.RequestStopping(warningAudioSourceID);
     }
 
@@ -113,12 +114,13 @@ public class SpriteMultiLineTimer : MonoBehaviour
     // 毎フレーム呼ばれる更新処理
     private void UpdateDisplay(float time)
     {
-        // Rキーが押されたらリスタート
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            RestartTimer(duration);
-            return;
-        }
+        currentTime = time;
+        //// Rキーが押されたらリスタート
+        //if (Input.GetKeyDown(KeyCode.R))
+        //{
+        //    RestartTimer();
+        //    return;
+        //}
 
         int currentSecond = Mathf.CeilToInt(time);
         if (currentSecond != previousSecond && previousSecond > 0)
@@ -157,4 +159,10 @@ public class SpriteMultiLineTimer : MonoBehaviour
         }
 
     }
+
+    public float GetTime()
+    {
+        return currentTime;
+    }
+
 }

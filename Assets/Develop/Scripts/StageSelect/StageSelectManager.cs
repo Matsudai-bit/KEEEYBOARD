@@ -79,6 +79,8 @@ public class StageSelectManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Application.targetFrameRate = 60; // 30fpsに設定
+
         m_arrowLeft.SetActive(false);
         m_arrowRight.SetActive(false);
         stageSlideController.Initialize();
@@ -99,6 +101,10 @@ public class StageSelectManager : MonoBehaviour
                 ChangeStageIndex((int)GameStatus.GetInstance.CurrentPlayingStage.stageID);
 
             }
+            else
+            {
+                GameStatus.GetInstance.CurrentStateID = GameStatus.ID.STAGESELECT;
+            }
         });
        
     }
@@ -109,6 +115,7 @@ public class StageSelectManager : MonoBehaviour
         if (currentState == SelectionState.RESULT_MODE && !stageSlideController.IsAnimation())
         {
             currentState = SelectionState.STAGE_SELECTION;
+            GameStatus.GetInstance.CurrentStateID = GameStatus.ID.STAGESELECT;
             // ステージインの処理
             contentsController.ViewOutLine(GetStageID(currentGradeIndex, currentStageIndex));
         }
@@ -239,7 +246,6 @@ public class StageSelectManager : MonoBehaviour
         }
         else if (currentState == SelectionState.STAGE_SELECTION)
         {
-            if (GetStageStatus(currentGradeIndex, currentStageIndex).isLocked) { return; }
 
             // ステージ確定の処理(階級 * 3 + ステージ番号)
             StageID selectedStage = (StageID)(currentGradeIndex * 3 + currentStageIndex);

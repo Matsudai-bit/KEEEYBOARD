@@ -27,7 +27,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 39f83b6f44fdced4dbbd3de72801f2af, type: 3}
   - labelName: BGM_RANK_3
     id: 4
-    clip: {fileID: 8300000, guid: 05470da769f5d3545bcf840758e371a2, type: 3}
+    clip: {fileID: 8300000, guid: e35e1b8cb6613f647833b115144d7bdc, type: 3}
   - labelName: SE_INGAME_PLAYER_MOVE
     id: 15
     clip: {fileID: 8300000, guid: ac8c5088b92c4644cb67b822fe05a22e, type: 3}
